@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil — Fondation PSMK</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="entete-contenu">
+        <div class="bloc-logo">
+          <img src="logo.png" alt="Fondation PSMK" class="logo-entete">
+        </div>
+        <div class="bloc-texte">
+          <h1>Fondation Paluku Siwako Makuké Kapako</h1>
+          <p class="sous-titre-entete">Au service du peuple de Lubero</p>
+          <p class="slogan">« La voix de la population à l'Assemblée nationale »</p>
+        </div>
+        <div class="bloc-photo">
+          <img src="depute.png" alt="L'Honorable Paluku Siwako Makuké Kapako" class="photo-entete">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html" class="actif">Accueil</a>
+      <a href="politique.html">Vie Politique</a>
+      <a href="donation.html">Faire un don</a>
+      <a href="contact.html">Contact</a>
+      <a href="#" id="lien-admin" class="btn-or" style="padding:6px 12px; border-radius:4px; font-size:0.85rem;">Admin</a>
+    </div>
+  </nav>
+
+  <section id="espace-admin" class="section" style="display:none; background:#f0f4f0;">
+    <div class="container">
+      <h2 class="titre-centre">🔐 Espace Administrateur</h2>
+      
+      <div id="connexion-admin" style="max-width: 450px; margin:0 auto 40px;">
+        <h3 style="text-align:center; color:var(--vert-fonce); margin-bottom:20px;">Connexion Admin</h3>
+        <form id="form-admin" class="formulaire">
+          <label for="admin-email">Email administrateur</label>
+          <input type="email" id="admin-email" required>
+          <label for="admin-mdp">Mot de passe</label>
+          <input type="password" id="admin-mdp" required>
+          <button type="submit" class="btn btn-plein">Se connecter</button>
+          <p id="msg-admin" class="message"></p>
+        </form>
+      </div>
+
+      <div id="panneau-admin" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:25px;">
+          <h3 style="color:var(--vert-fonce);">📊 Tableau de bord</h3>
+          <button id="deconnexion-admin" class="btn" style="background:var(--rouge); padding:6px 14px; font-size:0.9rem;">Déconnexion</button>
+        </div>
+
+        <div style="background:white; padding:25px; border-radius:8px; margin-bottom:30px;">
+          <h4 style="color:var(--vert-fonce); margin-bottom:15px;">📢 Publier une information à la une</h4>
+          <form id="form-info-une">
+            <label>Titre</label>
+            <input type="text" id="info-titre" required>
+            <label>Contenu</label>
+            <textarea id="info-contenu" rows="3" required></textarea>
+            <button type="submit" class="btn">Publier à la une</button>
+          </form>
+        </div>
+
+        <div style="background:white; padding:25px; border-radius:8px; margin-bottom:30px;">
+          <h4 style="color:var(--vert-fonce); margin-bottom:15px;">🏗️ Ajouter / Modifier un projet</h4>
+          <form id="form-projet">
+            <label>Nom du projet</label>
+            <input type="text" id="projet-nom" required>
+            <label>Description</label>
+            <textarea id="projet-description" rows="3" required></textarea>
+            <label>Statut</label>
+            <select id="projet-statut">
+              <option value="en-cours">En cours</option>
+              <option value="a-venir">À venir</option>
+              <option value="termine">Terminé</option>
+            </select>
+            <button type="submit" class="btn">Enregistrer le projet</button>
+          </form>
+        </div>
+
+        <div style="background:white; padding:25px; border-radius:8px;">
+          <h4 style="color:var(--vert-fonce); margin-bottom:15px;">💬 Suggestions en attente</h4>
+          <div id="liste-sugg-en-attente">
+            <p class="vide">Aucune suggestion en attente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="titre-centre">📢 À la une</h2>
+      <div id="liste-infos-une">
+        <div class="alrte-boite">
+          <h4>Bienvenue sur notre site</h4>
+          <p>Découvrez nos projets, nos actualités et partagez vos suggestions. Ensemble, construisons un avenir meilleur pour Lubero !</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-claire">
+    <div class="container">
+      <h2 class="titre-centre">Nos Réalisations</h2>
+      <div class="grille-chiffres">
+        <div class="carte-chiffre"><div class="chiffre">12</div><div class="etiquette">Activités menées</div></div>
+        <div class="carte-chiffre"><div class="chiffre" id="compteur-projets">04</div><div class="etiquette">Projets en cours</div></div>
+        <div class="carte-chiffre"><div class="chiffre">05</div><div class="etiquette">Rapports publiés</div></div>
+        <div class="carte-chiffre"><div class="chiffre">∞</div><div class="etiquette">Engagement total</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="titre-centre">Présentation de la Fondation</h2>
+      <p class="intro">Notre mission est de contribuer au bien-être de la population de Lubero à travers des actions concrètes, mesurables et durables.</p>
+      <h3 class="sous-titre-centre">Nos Valeurs</h3>
+      <div class="grille-valeurs">
+        <div class="valeur"><div class="valeur-icone">📊</div><h4>Transparence</h4><p>Rendre des comptes clairement</p></div>
+        <div class="valeur"><div class="valeur-icone">🤝</div><h4>Solidarité</h4><p>Agir ensemble pour les plus démunis</p></div>
+        <div class="valeur"><div class="valeur-icone">🗣️</div><h4>Participation</h4><p>Écouter et impliquer la population</p></div>
+        <div class="valeur"><div class="valeur-icone">🎯</div><h4>Impact</h4><p>Des résultats visibles sur le terrain</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-claire">
+    <div class="container">
+      <h2 class="titre-centre">Nos Projets</h2>
+      <div id="liste-projets">
+        <div class="action">
+          <h4>🏕️ Campagne de sensibilisation communautaire</h4>
+          <p>Rencontres dans les villages pour échanger sur les priorités du territoire et renforcer la cohésion sociale.</p>
+          <span class="projet-statut">En cours</span>
+        </div>
+        <div class="action">
+          <h4>📚 Appui à l'éducation et à la formation</h4>
+          <p>Distribution de matériel scolaire, soutien aux écoles et bourses pour les élèves méritants.</p>
+          <span class="projet-statut">En cours</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="titre-centre">💬 Paroles de citoyens</h2>
+      <p class="intro">Voici les suggestions et messages que vous nous avez confiés, sélectionnés et publiés pour le bien commun.</p>
+      <div id="liste-suggestions-accueil">
+        <p class="texte-centre note">Les suggestions approuvées apparaîtront ici.</p>
+      </div>
+      <p class="texte-centre" style="margin-top:20px;">
+        <a href="contact.html" class="btn">Laisser votre suggestion →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-claire">
+    <div class="container">
+      <h2 class="titre-centre">Nos Rapports</h2>
+      <table>
+        <thead><tr><th>Période</th><th>Résumé</th><th>Accès</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2026 — T1</strong></td><td>Projets sociaux, soutien sanitaire et suivi des bénéficiaires</td><td><a href="#" class="btn btn-sm">Voir</a></td></tr>
+          <tr><td><strong>2026 — T2</strong></td><td>Éducation, formation et actions communautaires renforcées</td><td><a href="#" class="btn btn-sm">Voir</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Fondation Paluku Siwako Makuké Kapako — Tous droits réservés</p>
+      <p>« Au service du peuple de Lubero »</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

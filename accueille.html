@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Accueil • Fondation PALUKU SIWAKO MAKUKE KAPAKO</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <img class="logo" src="logo.png" alt="Logo Fondation" />
+        <div>
+          <h1>Fondation PALUKU SIWAKO MAKUKE KAPAKO</h1>
+          <div class="sub">Transparence • Solidarité • Développement</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="accueil.html">Accueil</a>
+        <a href="politique.html">Vie Politique</a>
+        <a href="donation.html">Donation</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="panel hero-left">
+        <div class="kicker"><span class="dot"></span>Plateforme officielle (vitrine)</div>
+        <h2 class="hero-title">Suivez nos projets et nos engagements</h2>
+        <p class="hero-text">
+          Découvrez nos activités, nos rapports, et l’orientation de la vie politique de
+          l’Honorable. La fondation publie régulièrement des informations pour renforcer la confiance.
+        </p>
+
+        <div class="cta">
+          <a class="btn btn-primary" href="donation.html">Faire un don</a>
+          <a class="btn btn-ghost" href="politique.html">Voir la vie politique</a>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="grid" style="grid-template-columns:repeat(3, 1fr); margin-top:0;">
+          <div class="card">
+            <h3>Nos Activités</h3>
+            <p class="muted">Programmes communautaires (démo)</p>
+          </div>
+          <div class="card">
+            <h3>Rapports</h3>
+            <p class="muted">Résumé & documents (démo)</p>
+          </div>
+          <div class="card">
+            <h3>Transparence</h3>
+            <p class="muted">Publication régulière</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card">
+          <h3>Alerte Info</h3>
+          <ul class="list" id="alertes"></ul>
+          <p class="muted" style="margin-top:10px; font-size:13px;">Les alertes peuvent être mises à jour dans <b>app.js</b> (démo).</p>
+        </div>
+
+        <div class="card">
+          <h3>Engagements</h3>
+          <ul class="list">
+            <li>Proximité avec la population</li>
+            <li>Actions à impact mesurable</li>
+            <li>Rapports et suivi des bénéficiaires</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <h3 class="section-title">Présentation & Projets</h3>
+    <section class="grid">
+      <div class="card">
+        <h3>Présentation</h3>
+        <p class="muted" style="line-height:1.65;">
+          La Fondation <b>PALUKU SIWAKO MAKUKE KAPAKO</b> soutient l’éducation, la santé
+          et les initiatives locales. Notre objectif : améliorer durablement la vie des communautés.
+        </p>
+        <div class="badges" style="margin-top:14px;">
+          <span class="badge">Éducation</span>
+          <span class="badge">Santé</span>
+          <span class="badge">Jeunesse</span>
+          <span class="badge">Solidarité</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Nos Activités</h3>
+        <div class="timeline" id="activities"></div>
+      </div>
+
+      <div class="card">
+        <h3>Rapports (démo)</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Période</th>
+              <th>Résumé</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2026 T1</td>
+              <td class="muted">Bilan & suivi</td>
+              <td>
+                <button class="btn btn-primary" style="padding:10px 12px; border-radius:14px;"
+                  data-modal="report" data-title="Rapport 2026 T1" type="button">Voir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2026 T2</td>
+              <td class="muted">Plan & résultats</td>
+              <td>
+                <button class="btn btn-primary" style="padding:10px 12px; border-radius:14px;"
+                  data-modal="report" data-title="Rapport 2026 T2" type="button">Voir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="muted" style="margin-top:10px; font-size:13px;">
+          Plus tard : ajoutez des fichiers PDF réels (liens dans le modal).
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    © <span id="year"></span> Fondation PALUKU SIWAKO MAKUKE KAPAKO
+  </footer>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" type="button" aria-label="Fermer">✕</button>
+      <h3 id="modalTitle">Rapport</h3>
+      <p id="modalText"></p>
+      <a id="modalLink" href="#" target="_blank" rel="noreferrer" class="btn btn-ghost" style="margin-top:10px;">Ouvrir le document</a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

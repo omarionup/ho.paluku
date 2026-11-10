@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Suggestions — Fondation PSMK</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="entete-contenu">
+        <div class="bloc-logo">
+          <img src="logo.png" alt="Fondation PSMK" class="logo-entete">
+        </div>
+        <div class="bloc-texte">
+          <h1>Nous Contacter</h1>
+          <p class="sous-titre-entete">Votre voix compte</p>
+          <p class="slogan">Partagez vos idées et vos préoccupations</p>
+        </div>
+        <div class="bloc-photo">
+          <img src="depute.png" alt="L'Honorable Paluku Siwako Makuké Kapako" class="photo-entete">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">Accueil</a>
+      <a href="politique.html">Vie Politique</a>
+      <a href="donation.html">Faire un don</a>
+      <a href="contact.html" class="actif">Contact</a>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="titre-centre">Laisser une Suggestion</h2>
+      <p class="intro">Vos idées sont importantes. L'administrateur examinera chaque suggestion et décidera de sa publication sur le site.</p>
+      
+      <form id="form-suggestion" class="formulaire">
+        <label for="nom-sugg">Votre nom complet</label>
+        <input type="text" id="nom-sugg" required>
+        
+        <label for="email-sugg">Votre adresse email</label>
+        <input type="email" id="email-sugg" required>
+        
+        <label for="message-sugg">Votre suggestion ou message</label>
+        <textarea id="message-sugg" rows="5" required placeholder="Exprimez-vous librement..."></textarea>
+        
+        <button type="submit" class="btn btn-plein">Envoyer ma suggestion</button>
+        <p id="msg-sugg" class="message"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section bg-claire">
+    <div class="container">
+      <h2 class="titre-centre">Nos Coordonnées</h2>
+      
+      <div class="coordonnees">
+        <p><strong>📍 Siège :</strong> Lubero, Nord-Kivu — République Démocratique du Congo</p>
+        <p><strong>📧 Email :</strong> contact@fondationpsmk.cd</p>
+        <p><strong>📞 Téléphone :</strong> +243 8xx xxx xxx</p>
+        <p><strong>🕒 Heures :</strong> Lundi à Vendredi — 8h00 à 16h00</p>
+        <p style="margin-top:20px; font-style:italic; color:#666;">Pour toute demande d'information ou de rendez-vous, écrivez-nous ou appelez-nous. Nous vous répondrons dans les meilleurs délais.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Fondation Paluku Siwako Makuké Kapako — Tous droits réservés</p>
+      <p>« Au service du peuple de Lubero »</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
