@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Équipe - FOKAMA</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
+        :root{--bleu:#0c4b8c;--or:#d4a017;--claire:#f4f7fa;--sombre:#2d3748;}
+        body{line-height:1.6;color:var(--sombre);background:#fff;}
+        header{background:linear-gradient(135deg,var(--bleu) 0%,#1a6bc5 100%);color:white;padding:2rem 0;text-align:center;}
+        nav{background:white;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:0;z-index:99;}
+        nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;padding:1rem;}
+        nav a{text-decoration:none;color:var(--sombre);font-weight:500;padding:0.5rem 1rem;border-radius:4px;transition:0.3s;}
+        nav a:hover,nav a.active{background:var(--bleu);color:white;}
+        .container{max-width:1200px;margin:0 auto;padding:2rem;}
+        h2{color:var(--bleu);margin-bottom:2rem;border-bottom:3px solid var(--or);padding-bottom:0.5rem;display:inline-block;}
+        .intro{font-size:1.1rem;max-width:800px;margin-bottom:3rem;}
+        .fondateur-card{display:grid;grid-template-columns:300px 1fr;gap:3rem;background:var(--claire);border-radius:8px;padding:2rem;margin-bottom:3rem;align-items:center;}
+        .fondateur-photo{width:250px;height:250px;border-radius:50%;background:linear-gradient(135deg,var(--bleu) 0%,var(--or) 100%);display:flex;align-items:center;justify-content:center;color:white;font-size:4rem;margin:0 auto;text-align:center;}
+        .fondateur-info h3{color:var(--bleu);font-size:1.8rem;margin-bottom:0.5rem;}
+        .fondateur-info .titre{color:var(--or);font-weight:bold;margin-bottom:1.5rem;}
+        .conseil-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:2rem;}
+        .membre-card{background:var(--claire);border-radius:8px;padding:1.5rem;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:0.3s;}
+        .membre-card:hover{transform:translateY(-5px);box-shadow:0 6px 20px rgba(0,0,0,0.08);}
+        .membre-photo{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--bleu) 0%,var(--or) 100%);display:flex;align-items:center;justify-content:center;color:white;font-size:2.5rem;margin:0 auto 1rem;}
+        .membre-nom{font-weight:bold;color:var(--bleu);margin-bottom:0.3rem;}
+        .membre-poste{font-size:0.9rem;color:#718096;}
+        .bureau-section{margin:3rem 0;}
+        footer{background:var(--sombre);color:white;text-align:center;padding:2rem;margin-top:3rem;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Notre Équipe</h1>
+        <p>Le Conseil d'Administration et l'Équipe de la Fondation</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="nos-projets.html">Nos Projets</a></li>
+            <li><a href="realisations.html">Nos Réalisations</a></li>
+            <li><a href="equipe.html" class="active">Notre Équipe</a></li>
+            <li><a href="devenir-membre.html">Devenir Membre</a></li>
+            <li><a href="faire-un-don.html">Faire un don</a></li>
+            <li><a href="transparence.html">Transparence</a></li>
+            <li><a href="partenaires.html">Partenaires</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <p class="intro">La Fondation FOKAMA est dirigée par un Conseil d'Administration qui assure la mise en œuvre de notre mission et de nos orientations stratégiques.</p>
+
+        <h2>Le Fondateur</h2>
+        <div class="fondateur-card">
+            <div class="fondateur-photo">👤</div>
+            <div class="fondateur-info">
+                <h3>Honorable PALUKU SIWAKO MAKUKE KAPAKO</h3>
+                <div class="titre">Député National — Territoire de Lubero</div>
+                <p>C'est animé d'un profond désir de servir sa communauté et de contribuer au développement intégral du territoire de Lubero et de toute la République Démocratique du Congo qu'il crée la Fondation Kapako Makuke — FOKAMA.</p>
+                <br>
+                <p>Convaincu que le développement passe par la paix, l'éducation, la solidarité et l'entreprenariat, il œuvre à travers la fondation pour impulser des changements durables au bénéfice des populations vulnérables.</p>
+            </div>
+        </div>
+
+        <section class="bureau-section">
+            <h2>Le Bureau du Conseil d'Administration</h2>
+            <div class="conseil-grid">
+                <div class="membre-card">
+                    <div class="membre-photo">👤</div>
+                    <div class="membre-nom">Président</div>
+                    <div class="membre-poste">Représentant légal de la Fondation</div>
+                </div>
+                <div class="membre-card">
+                    <div class="membre-photo">👤</div>
+                    <div class="membre-nom">Vice-Président</div>
+                    <div class="membre-poste">Assiste le Président dans ses missions</div>
+                </div>
+                <div class="membre-card">
+                    <div class="membre-photo">👤</div>
+                    <div class="membre-nom">Secrétaire Général</div>
+                    <div class="membre-poste">Gestion administrative et archives</div>
+                </div>
+                <div class="membre-card">
+                    <div class="membre-photo">👤</div>
+                    <div class="membre-nom">Trésorier</div>
+                    <div class="membre-poste">Gestion des ressources et transparence</div>
+                </div>
+                <div class="membre-card">
+                    <div class="membre-photo">👤</div>
+                    <div class="membre-nom">Commissaire aux Comptes</div>
+                    <div class="membre-poste">Contrôle de la gestion financière</div>
+                </div>
+            </div>
+        </section>
+
+        <h2>Les Membres du Conseil d'Administration</h2>
+        <p style="margin-bottom:2rem;">Le Conseil d'Administration compte également des membres actifs qui participent aux orientations et décisions de la fondation.</p>
+        <div class="conseil-grid">
+            <div class="membre-card">
+                <div class="membre-photo">👤</div>
+                <div class="membre-nom">Membre du CA</div>
+                <div class="membre-poste">Représentant du secteur éducatif</div>
+            </div>
+            <div class="membre-card">
+                <div class="membre-photo">👤</div>
+                <div class="membre-nom">Membre du CA</div>
+                <div class="membre-poste">Représentant du secteur santé</div>
+            </div>
+            <div class="membre-card">
+                <div class="membre-photo">👤</div>
+                <div class="membre-nom">Membre du CA</div>
+                <div class="membre-poste">Représentant de la société civile</div>
+            </div>
+            <div class="membre-card">
+                <div class="membre-photo">👤</div>
+                <div class="membre-nom">Membre du CA</div>
+                <div class="membre-poste">Expert en développement communautaire</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 FOKAMA — Fondation Kapako Makuke. Tous droits réservés.</p>
+        <p>Siège : Lubero, Nord-Kivu — RDC</p>
+    </footer>
+</body>
+</html>
