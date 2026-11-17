@@ -1,82 +1,230 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact & Suggestions — Fondation PSMK</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Suggestions - FOKAMA</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
+        :root{--bleu:#0c4b8c;--or:#d4a017;--claire:#f4f7fa;--sombre:#2d3748;}
+        body{line-height:1.6;color:var(--sombre);background:#fff;}
+        header{background:linear-gradient(135deg,var(--bleu) 0%,#1a6bc5 100%);color:white;padding:2rem 0;text-align:center;}
+        nav{background:white;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:0;z-index:99;}
+        nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;padding:1rem;}
+        nav a{text-decoration:none;color:var(--sombre);font-weight:500;padding:0.5rem 1rem;border-radius:4px;transition:0.3s;}
+        nav a:hover,nav a.active{background:var(--bleu);color:white;}
+        .container{max-width:1200px;margin:0 auto;padding:2rem;}
+        h2{color:var(--bleu);margin-bottom:2rem;border-bottom:3px solid var(--or);padding-bottom:0.5rem;display:inline-block;}
+        .intro{font-size:1.1rem;max-width:800px;margin-bottom:3rem;}
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+        @media(max-width:768px){.grid{grid-template-columns:1fr;}}
+        .info-block{background:var(--claire);border-radius:8px;padding:2rem;margin-bottom:1.5rem;}
+        .info-block h3{color:var(--bleu);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
+        .info-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px dashed #ddd;}
+        .info-item strong{display:block;color:var(--or);margin-bottom:0.3rem;}
+        form{background:var(--claire);border-radius:8px;padding:2rem;}
+        label{display:block;margin-bottom:0.5rem;font-weight:500;}
+        input, textarea, select{width:100%;padding:0.8rem;margin-bottom:1.2rem;border:2px solid #e2e8f0;border-radius:4px;font-size:1rem;}
+        input:focus, textarea:focus, select:focus{outline:none;border-color:var(--bleu);}
+        button{background:var(--bleu);color:white;border:none;padding:0.9rem 2rem;border-radius:4px;font-size:1rem;font-weight:bold;cursor:pointer;transition:0.3s;width:100%;}
+        button:hover{background:#0a3a6e;}
+        #message-status{margin-top:1rem;padding:1rem;border-radius:4px;display:none;}
+        .success{background:#f0fdf4;color:#166534;display:block !important;}
+        .error{background:#fef2f2;color:#dc2626;display:block !important;}
+        .suggestions-section{margin-top:4rem;}
+        .suggestion-card{background:var(--claire);border-radius:8px;padding:1.5rem;margin-bottom:1rem;border-left:4px solid var(--or);}
+        .suggestion-auteur{font-weight:bold;color:var(--bleu);margin-bottom:0.5rem;}
+        .suggestion-date{font-size:0.85rem;color:#718096;margin-bottom:0.5rem;}
+        .parole-citoyen h3{color:var(--bleu);margin-bottom:1.5rem;}
+        footer{background:var(--sombre);color:white;text-align:center;padding:2rem;margin-top:3rem;}
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Nous Contacter &amp; Vos Suggestions</h1>
+        <p>Votre voix compte pour le développement de notre communauté</p>
+    </header>
 
-  <header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="nos-projets.html">Nos Projets</a></li>
+            <li><a href="realisations.html">Nos Réalisations</a></li>
+            <li><a href="equipe.html">Notre Équipe</a></li>
+            <li><a href="devenir-membre.html">Devenir Membre</a></li>
+            <li><a href="faire-un-don.html">Faire un don</a></li>
+            <li><a href="transparence.html">Transparence</a></li>
+            <li><a href="partenaires.html">Partenaires</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-      <div class="entete-contenu">
-        <div class="bloc-logo">
-          <img src="logo.png" alt="Fondation PSMK" class="logo-entete">
+        <p class="intro">Que ce soit pour une information, une proposition de partenariat, une suggestion ou un message d'encouragement, nous sommes à votre écoute.</p>
+
+        <div class="grid">
+            <div>
+                <h2>📍 Nos Coordonnées</h2>
+                
+                <div class="info-block">
+                    <h3>Siège Social</h3>
+                    <div class="info-item">
+                        <strong>Adresse</strong>
+                        Territoire de Lubero, Chef-lieu<br>
+                        Province du Nord-Kivu<br>
+                        République Démocratique du Congo
+                    </div>
+                    <div class="info-item">
+                        <strong>Téléphone</strong>
+                        +243 82 XX XX XX XX &mdash; +243 81 XX XX XX XX
+                    </div>
+                    <div class="info-item">
+                        <strong>Email</strong>
+                        contact@fokama.cd
+                    </div>
+                    <div class="info-item">
+                        <strong>Horaires</strong>
+                        Lundi &agrave; Vendredi : 8h00 &ndash; 16h00
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>À qui vous adresser ?</h3>
+                    <div class="info-item">
+                        <strong>Pour un don ou un soutien financier</strong>
+                        Service Tr&eacute;sorier &mdash; dons@fokama.cd
+                    </div>
+                    <div class="info-item">
+                        <strong>Pour un partenariat</strong>
+                        Bureau du Pr&eacute;sident &mdash; partenariats@fokama.cd
+                    </div>
+                    <div class="info-item">
+                        <strong>Pour adh&eacute;rer ou devenir membre</strong>
+                        Secr&eacute;tariat G&eacute;n&eacute;ral &mdash; adhesion@fokama.cd
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2>✍️ Envoyez-nous votre message</h2>
+                <form id="suggestion-form">
+                    <label for="nom">Votre nom complet *</label>
+                    <input type="text" id="nom" name="nom" required placeholder="Ex : Jean Mulenda">
+
+                    <label for="email">Votre email ou t&eacute;l&eacute;phone *</label>
+                    <input type="text" id="email" name="email" required placeholder="Ex : jean@email.com ou +243 82 ...">
+
+                    <label for="sujet">Sujet du message</label>
+                    <select id="sujet" name="sujet">
+                        <option value="suggestion">Suggestion / Proposition</option>
+                        <option value="demande">Demande d'information</option>
+                        <option value="partenariat">Proposition de partenariat</option>
+                        <option value="adhesion">Devenir membre</option>
+                        <option value="autre">Autre sujet</option>
+                    </select>
+
+                    <label for="message">Votre message *</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Écrivez votre message ici..."></textarea>
+
+                    <button type="submit">Envoyer le message</button>
+                    <div id="message-status"></div>
+                </form>
+            </div>
         </div>
-        <div class="bloc-texte">
-          <h1>Nous Contacter</h1>
-          <p class="sous-titre-entete">Votre voix compte</p>
-          <p class="slogan">Partagez vos idées et vos préoccupations</p>
-        </div>
-        <div class="bloc-photo">
-          <img src="depute.png" alt="L'Honorable Paluku Siwako Makuké Kapako" class="photo-entete">
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <nav>
-    <div class="container">
-      <a href="index.html">Accueil</a>
-      <a href="politique.html">Vie Politique</a>
-      <a href="donation.html">Faire un don</a>
-      <a href="contact.html" class="actif">Contact</a>
+        <!-- Parole des Citoyens -- Messages approuvés -->
+        <section class="suggestions-section">
+            <h2>🗣️ Parole des Citoyens</h2>
+            <p class="intro">Voici les messages et suggestions que nous ont adressés les citoyens et qui ont été approuvés pour publication.</p>
+            
+            <div id="suggestions-list">
+                <!-- Chargé automatiquement -->
+                <p style="text-align:center;color:#718096;padding:2rem;">Chargement des messages...</p>
+            </div>
+        </section>
     </div>
-  </nav>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="titre-centre">Laisser une Suggestion</h2>
-      <p class="intro">Vos idées sont importantes. L'administrateur examinera chaque suggestion et décidera de sa publication sur le site.</p>
-      
-      <form id="form-suggestion" class="formulaire">
-        <label for="nom-sugg">Votre nom complet</label>
-        <input type="text" id="nom-sugg" required>
-        
-        <label for="email-sugg">Votre adresse email</label>
-        <input type="email" id="email-sugg" required>
-        
-        <label for="message-sugg">Votre suggestion ou message</label>
-        <textarea id="message-sugg" rows="5" required placeholder="Exprimez-vous librement..."></textarea>
-        
-        <button type="submit" class="btn btn-plein">Envoyer ma suggestion</button>
-        <p id="msg-sugg" class="message"></p>
-      </form>
-    </div>
-  </section>
+    <footer>
+        <p>&copy; 2026 FOKAMA — Fondation Kapako Makuke. Tous droits réservés.</p>
+        <p>Siège : Lubero, Nord-Kivu — RDC</p>
+    </footer>
 
-  <section class="section bg-claire">
-    <div class="container">
-      <h2 class="titre-centre">Nos Coordonnées</h2>
-      
-      <div class="coordonnees">
-        <p><strong>📍 Siège :</strong> Lubero, Nord-Kivu — République Démocratique du Congo</p>
-        <p><strong>📧 Email :</strong> contact@fondationpsmk.cd</p>
-        <p><strong>📞 Téléphone :</strong> +243 8xx xxx xxx</p>
-        <p><strong>🕒 Heures :</strong> Lundi à Vendredi — 8h00 à 16h00</p>
-        <p style="margin-top:20px; font-style:italic; color:#666;">Pour toute demande d'information ou de rendez-vous, écrivez-nous ou appelez-nous. Nous vous répondrons dans les meilleurs délais.</p>
-      </div>
-    </div>
-  </section>
+    <script>
+        // --- CONFIGURATION ---
+        const SHEETDB_URL = "https://sheetdb.io/api/v1/r8w4zccs5agk4";
 
-  <footer>
-    <div class="container">
-      <p>© 2026 Fondation Paluku Siwako Makuké Kapako — Tous droits réservés</p>
-      <p>« Au service du peuple de Lubero »</p>
-    </div>
-  </footer>
+        // --- Envoyer le formulaire ---
+        const form = document.getElementById('suggestion-form');
+        const statusDiv = document.getElementById('message-status');
 
-  <script src="app.js"></script>
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            statusDiv.style.display = 'none';
+            statusDiv.className = '';
+            statusDiv.textContent = '';
+
+            const formData = {
+                nom: document.getElementById('nom').value,
+                email: document.getElementById('email').value,
+                sujet: document.getElementById('sujet').value,
+                message: document.getElementById('message').value,
+                statut: '', // Vide par défaut — l'admin remplira dans le Sheet
+                date: new Date().toLocaleString('fr-FR')
+            };
+
+            try {
+                const res = await fetch(SHEETDB_URL, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(formData)
+                });
+
+                if (res.ok) {
+                    statusDiv.textContent = '✅ Message envoyé avec succès ! Il sera examiné par notre équipe.';
+                    statusDiv.classList.add('success');
+                    form.reset();
+                    chargerSuggestions(); // Rafraîchir la liste
+                } else {
+                    throw new Error('Erreur envoi');
+                }
+            } catch (err) {
+                statusDiv.textContent = '❌ Erreur lors de l\'envoi. Veuillez réessayer plus tard.';
+                statusDiv.classList.add('error');
+            }
+        });
+
+        // --- Charger les suggestions APPROUVÉES seulement ---
+        async function chargerSuggestions() {
+            const liste = document.getElementById('suggestions-list');
+            try {
+                const res = await fetch(SHEETDB_URL);
+                const data = await res.json();
+                
+                // Filtrer : seulement celles avec statut = "Approuvée"
+                const approuvees = data.filter(item => 
+                    item.statut && item.statut.toLowerCase() === 'approuvée'
+                );
+
+                if (approuvees.length === 0) {
+                    liste.innerHTML = '<p style="text-align:center;color:#718096;padding:2rem;">Aucune suggestion n\'a encore été publiée. Soyez le premier à nous écrire !</p>';
+                    return;
+                }
+
+                liste.innerHTML = approuvees.map(item => `
+                    <div class="suggestion-card">
+                        <div class="suggestion-auteur">${item.nom || 'Anonyme'}</div>
+                        <div class="suggestion-date">${item.date || ''}</div>
+                        <p>${item.message || ''}</p>
+                    </div>
+                `).join('');
+            } catch (err) {
+                liste.innerHTML = '<p style="text-align:center;color:red;padding:2rem;">Impossible de charger les messages.</p>';
+            }
+        }
+
+        // Charger au démarrage
+        chargerSuggestions();
+    </script>
 </body>
 </html>
