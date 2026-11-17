@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Administrateur - FOKAMA</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
+        :root{--bleu:#0c4b8c;--or:#d4a017;--claire:#f4f7fa;--sombre:#2d3748;--vert:#16a34a;--rouge:#dc2626;}
+        body{line-height:1.6;color:var(--sombre);background:#fff;}
+        header{background:linear-gradient(135deg,var(--bleu) 0%,#1a6bc5 100%);color:white;padding:1.5rem 0;text-align:center;}
+        .login-container{max-width:400px;margin:4rem auto;padding:2rem;background:var(--claire);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+        .login-container h2{text-align:center;color:var(--bleu);margin-bottom:1.5rem;}
+        input{
+input{width:100%;padding:0.8rem;margin-bottom:1rem;border:2px solid #e2e8f0;border-radius:4px;font-size:1rem;}
+        button{width:100%;background:var(--bleu);color:white;border:none;padding:0.9rem;border-radius:4px;font-size:1rem;font-weight:bold;cursor:pointer;transition:0.3s;}
+        button:hover{background:#0a3a6e;}
+        .main-content{display:none;max-width:1200px;margin:0 auto;padding:2rem;}
+        .main-content.active{display:block;}
+        .admin-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--or);}
+        .deconnexion{background:var(--rouge);padding:0.6rem 1.2rem;font-size:0.9rem;width:auto;}
+        .deconnexion:hover{background:#b91c1c;}
+        h2{color:var(--bleu);margin-bottom:1.5rem;}
+        .tabs{display:flex;gap:0.5rem;margin-bottom:1.5rem;flex-wrap:wrap;}
+        .tab-btn{background:var(--claire);color:var(--sombre);border:none;padding:0.7rem 1.2rem;border-radius:4px;cursor:pointer;font-weight:500;width:auto;}
+        .tab-btn.active{background:var(--bleu);color:white;}
+        .tab-content{display:none;}
+        .tab-content.active{display:block;}
+        .message-card{background:var(--claire);border-radius:8px;padding:1.5rem;margin-bottom:1rem;border-left:4px solid #94a3b8;}
+        .message-card.en-attente{border-left-color:var(--or);}
+        .message-card.approuvee{border-left-color:var(--vert);}
+        .message-card.refusee{border-left-color:var(--rouge);}
+        .message-entete{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.8rem;flex-wrap:wrap;gap:0.5rem;}
+        .message-nom{font-weight:bold;color:var(--bleu);font-size:1.1rem;}
+        .message-date{font-size:0.85rem;color:#718096;}
+        .message-sujet{display:inline-block;background:#e2e8f0;padding:0.25rem 0.6rem;border-radius:4px;font-size:0.85rem;margin-bottom:0.5rem;}
+        .statut-badge{display:inline-block;padding:0.25rem 0.6rem;border-radius:4px;font-size:0.85rem;font-weight:bold;}
+        .statut-attente{background:#fef3c7;color:#92400e;}
+        .statut-approuvee{background:#dcfce7;color:#166534;}
+        .statut-refusee{background:#fee2e2;color:#991b1b;}
+        .actions{margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;}
+        .btn-approuver{background:var(--vert);padding:0.5rem 1rem;font-size:0.9rem;width:auto;}
+        .btn-approuver:hover{background:#15803d;}
+        .btn-refuser{background:var(--rouge);padding:0.5rem 1rem;font-size:0.9rem;width:auto;}
+        .btn-refuser:hover{background:#b91c1c;}
+        .btn-supprimer{background:#475569;padding:0.5rem 1rem;font-size:0.9rem;width:auto;}
+        .btn-supprimer:hover{background:#334155;}
+        .status-msg{padding:1rem;border-radius:4px;margin:1rem 0;display:none;}
+        .status-msg.success{background:#f0fdf4;color:#166534;display:block;}
+        .status-msg.error{background:#fef2f2;color:#dc2626;display:block;}
+        .empty-state{text-align:center;padding:3rem;color:#718096;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Espace Administrateur — FOKAMA</h1>
+    </header>
+
+    <!-- === PAGE DE CONNEXION === -->
+    <div id="login-page" class="login-container">
+        <h2>🔐 Connexion Admin</h2>
+        <label style="font-weight:500;margin-bottom:0.5rem;display:block;">Mot de passe</label>
+        <input type="password" id="admin-password" placeholder="Entrez le mot de passe...">
+        <button onclick="seConnecter()">Se connecter</button>
+        <p style="text-align:center;margin-top:1rem;font-size:0.9rem;color:#718096;">Réservé au Président et au Bureau du CA</p>
+    </div>
+
+    <!-- === PAGE PRINCIPALE ADMIN === -->
+    <div id="admin-content" class="main-content">
+        <div class="admin-header">
+            <h2>Gestion des Messages & Suggestions</h2>
+            <button class="deconnexion" onclick="seDeconnecter()">Se déconnecter</button>
+        </div>
+
+        <div id="status-message" class="status-msg"></div>
+
+        <!-- Onglets -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="changerOnglet('tous')">Tous</button>
+            <button class="tab-btn" onclick="changerOnglet('en-attente')">⏳ En attente</button>
+            <button class="tab-btn" onclick="changerOnglet('approuvees')">✅ Approuvées</button>
+            <button class="tab-btn" onclick="changerOnglet('refusees')">❌ Refusées</button>
+        </div>
+
+        <!-- Liste des messages -->
+        <div id="messages-list">
+            <p style="text-align:center;padding:2rem;">Chargement des messages...</p>
+        </div>
+    </div>
+
+    <script>
+        // === CONFIGURATION ===
+        const ADMIN_PASSWORD = "FokamaAdmin2026!"; // Changez ce mot de passe !
+        const SHEETDB_URL = "https://sheetdb.io/api/v1/r8w4zccs5agk4";
+        let messages = [];
+        let ongletActuel = 'tous';
+
+        // === CONNEXION ===
+        function seConnecter() {
+            const saisie = document.getElementById('admin-password').value;
+            if (saisie === ADMIN_PASSWORD) {
+                document.getElementById('login-page').style.display = 'none';
+                document.getElementById('admin-content').classList.add('active');
+                chargerMessages();
+            } else {
+                alert("❌ Mot de passe incorrect !");
+            }
+        }
+
+        function seDeconnecter() {
+            document.getElementById('admin-content').classList.remove('active');
+            document.getElementById('login-page').style.display = 'block';
+            document.getElementById('admin-password').value = '';
+        }
+
+        // === ONGLETS ===
+        function changerOnglet(onglet) {
+            ongletActuel = onglet;
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            afficherMessages();
+        }
+
+        // === CHARGER LES MESSAGES ===
+        async function chargerMessages() {
+            try {
+                const res = await fetch(SHEETDB_URL);
+                messages = await res.json();
+                afficherMessages();
+            } catch (err) {
+                document.getElementById('messages-list').innerHTML = '<p style="color:red;text-align:center;">❌ Impossible de charger les données. Vérifiez votre connexion internet.</p>';
+            }
+        }
+
+        // === FILTRER ET AFFICHER ===
+        function afficherMessages() {
+            let liste = messages;
+            
+            if (ongletActuel === 'en-attente') {
+                liste = messages.filter(m => !m.statut || m.statut.trim() === '');
+            } else if (ongletActuel === 'approuvees') {
+                liste = messages.filter(m => m.statut && m.statut.toLowerCase() === 'approuvée');
+            } else if (ongletActuel === 'refusees') {
+                liste = messages.filter(m => m.statut && m.statut.toLowerCase() === 'refusée');
+            }
+
+            const conteneur = document.getElementById('messages-list');
+
+            if (liste.length === 0) {
+                conteneur.innerHTML = '<div class="empty-state">Aucun message dans cette catégorie.</div>';
+                return;
+            }
+
+            conteneur.innerHTML = liste.map((msg, index) => {
+                const statutClasse = !msg.statut || msg.statut.trim() === '' ? 'en-attente' : 
+                                     msg.statut.toLowerCase() === 'approuvée' ? 'approuvee' : 'refusee';
+                const statutBadge = !msg.statut || msg.statut.trim() === '' ? 
+                    '<span class="statut-badge statut-attente">⏳ En attente</span>' :
+                    msg.statut.toLowerCase() === 'approuvée' ? 
+                    '<span class="statut-badge statut-approuvee">✅ Approuvée</span>' :
+                    '<span class="statut-badge statut-refusee">❌ Refusée</span>';
+
+                return `
+                    <div class="message-card ${statutClasse}" data-index="${index}">
+                        <div class="message-entete">
+                            <div>
+                                <div class="message-nom">${msg.nom || 'Anonyme'}</div>
+                                <div class="message-date">${msg.date || 'Date inconnue'}</div>
+                                <span class="message-sujet">${msg.sujet || 'Sans sujet'}</span>
+                                ${statutBadge}
+                            </div>
+                        </div>
+                        <p style="white-space:pre-wrap;margin:0.8rem 0;">${msg.message || ''}</p>
+                        <div class="actions">
+                            ${(!msg.statut || msg.statut.trim() === '') ? `
+                                <button class="btn-approuver" onclick="approuver(${index})">✅ Approuver</button>
+                                <button class="btn-refuser" onclick="refuser(${index})">❌ Refuser</button>
+                            ` : ''}
+                            <button class="btn-supprimer" onclick="supprimer(${index})">🗑️ Supprimer</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // === METTRE À JOUR LE STATUT DANS SHEETDB ===
+        async function mettreAJourStatut(index, nouveauStatut) {
+            const msg = messages[index];
+            const statusDiv = document.getElementById('status-message');
+            
+            try {
+                // Trouver l'ID dans la ligne (ajouté automatiquement par SheetDB)
+                const rowId = msg._id;
+                
+                const res = await fetch(`${SHEETDB_URL}/${rowId}`, {
+                    method: 'PATCH',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ statut: nouveauStatut })
+                });
+
+                if (res.ok) {
+                    messages[index].statut = nouveauStatut;
+                    afficherMessages();
+                    statusDiv.textContent = `✅ Message ${nouveauStatut} avec succès !`;
+                    statusDiv.className = 'status-msg success';
+                    setTimeout(() => statusDiv.style.display = 'none', 3000);
+                } else {
+                    throw new Error('Erreur réseau');
+                }
+            } catch (err) {
+                statusDiv.textContent = "❌ Erreur lors de la mise à jour. Réessayez.";
+                statusDiv.className = 'status-msg error';
+                setTimeout(() => statusDiv.style.display = 'none', 4000);
+            }
+        }
+
+        function approuver(index) {
+            if (confirm("✅ Êtes-vous sûr de vouloir APPROUVER ce message ? Il sera visible sur la page d'accueil du site.")) {
+                mettreAJourStatut(index, 'Approuvée');
+            }
+        }
+
+        function refuser(index) {
+            if (confirm("❌ Êtes-vous sûr de vouloir REFUSER ce message ? Il ne sera PAS publié.")) {
+                mettreAJourStatut(index, 'Refusée');
+            }
+        }
+
+        async function supprimer(index) {
+            if (confirm("🗑️ Êtes-vous sûr de vouloir SUPPRIMER définitivement ce message ? Cette action est irréversible.")) {
+                const msg = messages[index];
+                const statusDiv = document.getElementById('status-message');
+                try {
+                    const rowId = msg._id;
+                    const res = await fetch(`${SHEETDB_URL}/${rowId}`, { method: 'DELETE' });
+                    if (res.ok) {
+                        messages.splice(index, 1);
+                        afficherMessages();
+                        statusDiv.textContent = "🗑️ Message supprimé définitivement.";
+                        statusDiv.className = 'status-msg success';
+                        setTimeout(() => statusDiv.style.display = 'none', 3000);
+                    }
+                } catch (err) {
+                    statusDiv.textContent = "❌ Impossible de supprimer le message.";
+                    statusDiv.className = 'status-msg error';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
