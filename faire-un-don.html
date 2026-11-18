@@ -8,35 +8,37 @@
         *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
         :root{--bleu:#0c4b8c;--or:#d4a017;--claire:#f4f7fa;--sombre:#2d3748;}
         body{line-height:1.6;color:var(--sombre);background:#fff;}
-        header{background:linear-gradient(135deg,var(--bleu) 0%,#1a6bc5 100%);color:white;padding:2rem 0;text-align:center;}
-        nav{background:white;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:0;z-index:99;}
-        nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;padding:1rem;}
-        nav a{text-decoration:none;color:var(--sombre);font-weight:500;padding:0.5rem 1rem;border-radius:4px;transition:0.3s;}
+        header{background:linear-gradient(135deg,var(--bleu) 0%,#1a6bc5 100%);color:white;padding:2rem 0;text-align:center;margin-top:36px;}
+        nav{background:white;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:36px;z-index:99;}
+        nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;padding:1rem;}
+        nav a{text-decoration:none;color:var(--sombre);font-weight:500;padding:0.5rem 0.8rem;border-radius:4px;transition:0.3s;font-size:0.95rem;}
         nav a:hover,nav a.active{background:var(--bleu);color:white;}
         .container{max-width:1200px;margin:0 auto;padding:2rem;}
-        h2{color:var(--bleu);margin-bottom:2rem;border-bottom:3px solid var(--or);padding-bottom:0.5rem;display:inline-block;}
-        .intro{font-size:1.1rem;max-width:800px;margin-bottom:3rem;}
+        h2{color:var(--bleu);margin-bottom:1.5rem;border-bottom:3px solid var(--or);padding-bottom:0.5rem;display:inline-block;}
         .declaration{background:var(--claire);border-left:4px solid var(--or);padding:1.5rem;border-radius:0 6px 6px 0;margin-bottom:2rem;}
         .declaration h3{color:var(--bleu);margin-bottom:1rem;}
-        .montants{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin:2rem 0;}
-        .montant-card{background:var(--claire);border-radius:8px;padding:1.5rem;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:0.3s;cursor:pointer;border:3px solid transparent;}
-        .montant-card:hover{border-color:var(--or);transform:translateY(-5px);}
-        .montant{font-size:1.8rem;font-weight:bold;color:var(--bleu);margin-bottom:0.5rem;}
-        .impact{font-size:0.9rem;color:var(--sombre);}
-        .methode{background:var(--claire);border-radius:8px;padding:2rem;margin-bottom:1.5rem;}
-        .methode h3{color:var(--bleu);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
-        .metode-icon{font-size:1.5rem;}
-        select, .info-box{width:100%;padding:0.8rem;margin:0.5rem 0 1.5rem;border:2px solid #e2e8f0;border-radius:4px;font-size:1rem;}
-        .info-box{background:white;}
-        .cache{display:none;}
-        .visible{display:block;animation:fade 0.3s ease;}
+        .montants{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:2rem 0;}
+        .montant-card{background:var(--claire);border-radius:8px;padding:1.2rem;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:0.3s;border:3px solid transparent;}
+        .montant-card:hover{border-color:var(--or);transform:translateY(-3px);}
+        .montant{font-size:1.6rem;font-weight:bold;color:var(--bleu);margin-bottom:0.3rem;}
+        select{width:100%;padding:0.8rem;margin:0.5rem 0 1.5rem;border:2px solid #e2e8f0;border-radius:4px;font-size:1rem;}
+        .info-box{background:var(--claire);padding:1.5rem;border-radius:6px;margin-bottom:1.5rem;display:none;}
+        .info-box.visible{display:block;animation:fade 0.3s ease;}
         @keyframes fade{from{opacity:0;}to{opacity:1;}}
-        .garantie{background:#f0fdf4;border-left:4px solid #16a34a;padding:1.5rem;border-radius:0 6px 6px 0;margin-top:3rem;}
+        .info-box h4{color:var(--bleu);margin-bottom:0.8rem;}
+        .garantie{background:#f0fdf4;border-left:4px solid #16a34a;padding:1.5rem;border-radius:0 6px 6px 0;margin-top:2rem;}
         .garantie h4{color:#16a34a;margin-bottom:0.5rem;}
         footer{background:var(--sombre);color:white;text-align:center;padding:2rem;margin-top:3rem;}
     </style>
 </head>
 <body>
+    <!-- Barre d'alertes -->
+    <div style="position:fixed;top:0;left:0;right:0;background:var(--bleu);color:white;padding:0.4rem 1rem;z-index:100;display:flex;align-items:center;gap:1rem;overflow:hidden;">
+        <span style="font-weight:bold;white-space:nowrap;display:flex;align-items:center;gap:0.5rem;flex-shrink:0;"><span style="width:10px;height:10px;border-radius:50%;background:#4ade80;animation:clignotant 1s infinite;display:inline-block;"></span> ALERTES</span>
+        <span style="white-space:nowrap;animation:defile 20s linear infinite;">Faites un don à FOKAMA — Soutenez nos projets au Lubero !</span>
+    </div>
+    <style>@keyframes clignotant{0%{opacity:1;}50%{opacity:0.3;}100%{opacity:1;}}@keyframes defile{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}</style>
+
     <header>
         <h1>Faire un Don à FOKAMA</h1>
         <p>Votre soutien change des vies au Nord-Kivu et en RDC</p>
@@ -47,9 +49,9 @@
             <li><a href="index.html">Accueil</a></li>
             <li><a href="a-propos.html">À propos</a></li>
             <li><a href="nos-projets.html">Nos Projets</a></li>
-            <li><a href="realisations.html">Nos Réalisations</a></li>
-            <li><a href="equipe.html">Notre Équipe</a></li>
-            <li><a href="devenir-membre.html">Devenir Membre</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="equipe.html">Équipe</a></li>
+            <li><a href="vie-politique.html">Vie Politique</a></li>
             <li><a href="faire-un-don.html" class="active">Faire un don</a></li>
             <li><a href="transparence.html">Transparence</a></li>
             <li><a href="partenaires.html">Partenaires</a></li>
@@ -60,114 +62,68 @@
     <div class="container">
         <div class="declaration">
             <h3>📜 Déclaration sur la provenance des ressources</h3>
-            <p>Conformément à nos statuts, la Fondation FOKAMA s'engage formellement à ne pas accepter :</p>
-            <ul style="padding-left:1.5rem;margin-top:0.5rem;">
-                <li>Tout financement provenant d'activités illicites (trafic d'armes, blanchiment d'argent, etc.)</li>
-                <li>Tout don assorti de conditions contraires aux valeurs de paix, de justice et d'équité</li>
-                <li>Toute ressource qui pourrait compromettre notre indépendance et notre neutralité</li>
-            </ul>
-            <p style="margin-top:0.5rem;"><strong>Nos ressources proviennent exclusivement des cotisations des membres, des dons licites, des subventions légales et des produits de nos activités autorisées.</strong></p>
+            <p>Conformément à nos statuts, la Fondation FOKAMA s'engage formellement à ne pas accepter tout financement provenant d'activités illicites ou assorti de conditions contraires à nos valeurs.</p>
         </div>
 
-        <p class="intro">Votre don nous permet de soutenir des projets concrets dans les domaines de la paix, l'éducation, la santé, l'environnement et l'entreprenariat au service des communautés du territoire de Lubero et de toute la RDC.</p>
+        <p style="font-size:1.1rem;margin-bottom:2rem;">Votre don nous permet de soutenir des projets concrets dans les domaines de la paix, l'éducation, la santé, l'environnement et l'entreprenariat.</p>
 
         <h2>Ce que votre don permet de faire</h2>
         <div class="montants">
             <div class="montant-card">
                 <div class="montant">5$</div>
-                <div class="impact">Un kit scolaire pour un élève</div>
+                <div>Un kit scolaire pour un élève</div>
             </div>
             <div class="montant-card">
                 <div class="montant">20$</div>
-                <div class="impact">Un kit de santé pour une famille</div>
+                <div>Un kit de santé pour une famille</div>
             </div>
             <div class="montant-card">
                 <div class="montant">50$</div>
-                <div class="impact">100 arbres plantés pour l'environnement</div>
+                <div>100 arbres plantés</div>
             </div>
             <div class="montant-card">
                 <div class="montant">100$</div>
-                <div class="impact">Une bourse pour une fille pendant un trimestre</div>
+                <div>Une bourse pour une fille</div>
             </div>
             <div class="montant-card">
                 <div class="montant">250$</div>
-                <div class="impact">Formation complète d'un jeune entrepreneur</div>
+                <div>Formation d'un jeune</div>
             </div>
         </div>
 
         <h2>Choisissez votre mode de paiement</h2>
-        
-        <div class="methode">
-            <h3>Mode de paiement</h3>
-            <select id="modePaiement" onchange="changerMode()">
-                <<option value="">-- Sélectionnez un mode de paiement --</option>
-                <option value="airtel">Airtel Money</option>
-                <option value="mtn">MTN Mobile Money</option>
-                <option value="versement">Virement Bancaire</option>
-                <option value="especes">En Espèces au Siège</option>
-            </select>
+        <select id="modePaiement" onchange="changerMode()">
+            <option value="">-- Sélectionnez un mode de paiement --</option>
+            <option value="airtel">Airtel Money</option>
+            <option value="mtn">MTN Mobile Money</option>
+            <option value="versement">Virement Bancaire</option>
+            <option value="especes">En Espèces au Siège</option>
+        </select>
 
-            <div id="airtel-info" class="info-box cache">
-                <h4>📱 Airtel Money</h4>
-                <p><strong>Numéro :</strong> +243 82 XX XX XX XX</p>
-                <p><strong>Nom du compte :</strong> FOKAMA — Fondation Kapako Makuke</p>
-                <p style="font-size:0.9rem;color:#718096;margin-top:0.5rem;">Après envoi, merci de nous envoyer la référence du paiement par WhatsApp ou email.</p>
-            </div>
-
-            <div id="mtn-info" class="info-box cache">
-                <h4>📱 MTN Mobile Money</h4>
-                <p><strong>Numéro :</strong> +243 81 XX XX XX XX</p>
-                <p><strong>Nom du compte :</strong> FOKAMA — Fondation Kapako Makuke</p>
-                <p style="font-size:0.9rem;color:#718096;margin-top:0.5rem;">Après envoi, merci de nous envoyer la référence du paiement par WhatsApp ou email.</p>
-            </div>
-
-            <div id="versement-info" class="info-box cache">
-                <h4>🏦 Coordonnées Bancaires</h4>
-                <p><strong>Nom du compte :</strong> FONDATION KAPAKO MAKUKE — FOKAMA</p>
-                <p><strong>Banque :</strong> [Nom de votre banque]</p>
-                <p><strong>Numéro de compte :</strong> XXX XXXXXXXXXX XX</p>
-                <p><strong>Code SWIFT :</strong> XXXXXXXX</p>
-                <p><strong>Référence à indiquer :</strong> Don — [Votre nom]</p>
-            </div>
-
-            <div id="especes-info" class="info-box cache">
-                <h4>🏢 Au Siège de la Fondation</h4>
-                <p><strong>Adresse :</strong> Territoire de Lubero, Chef-lieu, Nord-Kivu — RDC</p>
-                <p><strong>Horaires :</strong> Lundi à Vendredi, de 8h00 à 16h00</p>
-                <p style="font-size:0.9rem;color:#718096;margin-top:0.5rem;">Un reçu officiel vous sera systématiquement délivré pour tout don reçu en espèces.</p>
-            </div>
+        <div id="airtel-info" class="info-box">
+            <h4>📱 Airtel Money</h4>
+            <p><strong>Numéro :</strong> +243 82 XX XX XX XX</p>
+            <p><strong>Nom du compte :</strong> FOKAMA — Fondation Kapako Makuke</p>
+            <p style="font-size:0.9rem;color:#718096;margin-top:0.5rem;">Après envoi, merci de nous envoyer la référence du paiement.</p>
         </div>
 
-        <div class="garantie">
-            <h4>🔒 Transparence & Confiance</h4>
-            <p>Tous nos comptes sont contrôlés par un Commissaire aux Comptes indépendant. Nous publions chaque année un rapport financier accessible dans la section <a href="transparence.html" style="color:#16a34a;font-weight:bold;">Transparence</a>. Votre don est déductible selon la législation en vigueur.</p>
+        <div id="mtn-info" class="info-box">
+            <h4>📱 MTN Mobile Money</h4>
+            <p><strong>Numéro :</strong> +243 81 XX XX XX XX</p>
+            <p><strong>Nom du compte :</strong> FOKAMA — Fondation Kapako Makuke</p>
+            <p style="font-size:0.9rem;color:#718096;margin-top:0.5rem;">Après envoi, merci de nous envoyer la référence du paiement.</p>
         </div>
-    </div>
 
-    <footer>
-        <p>&copy; 2026 FOKAMA — Fondation Kapako Makuke. Tous droits réservés.</p>
-        <p>Siège : Lubero, Nord-Kivu — RDC</p>
-    </footer>
+        <div id="versement-info" class="info-box">
+            <h4>🏦 Coordonnées Bancaires</h4>
+            <p><strong>Nom du compte :</strong> FONDATION KAPAKO MAKUKE — FOKAMA</p>
+            <p><strong>Banque :</strong> [Nom de votre banque]</p>
+            <p><strong>Numéro de compte :</strong> XXX XXXXXXXXXX XX</p>
+            <p><strong>Code SWIFT :</strong> XXXXXXXX</p>
+            <p><strong>Référence :</strong> Don — [Votre nom]</p>
+        </div>
 
-    <script>
-        function changerMode() {
-            const select = document.getElementById('modePaiement');
-            const value = select.value;
-            
-            // Cacher toutes les infos
-            document.querySelectorAll('.info-box').forEach(box => {
-                box.classList.remove('visible');
-                box.classList.add('cache');
-            });
-            
-            // Afficher la sélectionnée
-            if (value) {
-                const selected = document.getElementById(value + '-info');
-                selected.classList.remove('cache');
-                selected.classList.add('visible');
-            }
-        }
-    </script>
-</body>
-</html>
-
+        <div id="especes-info" class="info-box">
+            <h4>🏢 Au Siège de la Fondation</h4>
+            <p><strong>Adresse :</strong> Territoire de Lubero, Chef-lieu, Nord-Kivu — RDC</p>
+            <p><strong>Horaires :</strong> Lundi à Vend
