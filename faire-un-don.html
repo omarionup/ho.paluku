@@ -126,4 +126,37 @@
         <div id="especes-info" class="info-box">
             <h4>🏢 Au Siège de la Fondation</h4>
             <p><strong>Adresse :</strong> Territoire de Lubero, Chef-lieu, Nord-Kivu — RDC</p>
-            <p><strong>Horaires :</strong> Lundi à Vend
+            <p><strong>Horaires :</strong> Lundi à Vend             <p><strong>Horaires :</strong> Lundi à Vendredi, de 8h00 à 16h00</p>
+            <p style="font-size:0.9rem;color:#718096;margin-top:0.5rem;">Un reçu officiel vous sera délivré pour tout don reçu en espèces.</p>
+        </div>
+
+        <div class="garantie">
+            <h4>🔒 Transparence & Confiance</h4>
+            <p>Tous nos comptes sont contrôlés par un Commissaire aux Comptes indépendant. Nous publions chaque année un rapport financier accessible dans la section <a href="transparence.html" style="color:#16a34a;font-weight:bold;">Transparence</a>. Votre don est déductible selon la législation en vigueur.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 FOKAMA — Fondation Kapako Makuke. Tous droits réservés.</p>
+        <p>Siège : Lubero, Nord-Kivu — RDC</p>
+    </footer>
+
+    <script>
+        function changerMode() {
+            const select = document.getElementById('modePaiement');
+            const value = select.value;
+            
+            // Cacher toutes les infos
+            document.querySelectorAll('.info-box').forEach(box => {
+                box.classList.remove('visible');
+            });
+            
+            // Afficher la sélectionnée
+            if (value) {
+                document.getElementById(value + '-info').classList.add('visible');
+            }
+        }
+    </script>
+</body>
+</html>
+
