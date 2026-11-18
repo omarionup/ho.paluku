@@ -1,190 +1,118 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accueil — Fondation PSMK</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - FOKAMA | Fondation Kapako Makuke</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
+        :root{--bleu:#0c4b8c;--or:#d4a017;--claire:#f4f7fa;--sombre:#2d3748;}
+        body{line-height:1.6;color:var(--sombre);background:#fff;}
+        
+        /* Barre d'alertes fixe */
+        .alerte-bar{position:fixed;top:0;left:0;right:0;background:var(--bleu);color:white;padding:0.4rem 1rem;z-index:100;display:flex;align-items:center;gap:1rem;overflow:hidden;}
+        .alerte-label{font-weight:bold;white-space:nowrap;display:flex;align-items:center;gap:0.5rem;flex-shrink:0;}
+        .led-indicator{width:10px;height:10px;border-radius:50%;background:#4ade80;animation:clignotant 1s infinite;}
+        @keyframes clignotant{0%{opacity:1;}50%{opacity:0.3;}100%{opacity:1;}}
+        .alerte-text{white-space:nowrap;animation:defile 20s linear infinite;}
+        @keyframes defile{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
+        
+        header{margin-top:36px;background:linear-gradient(135deg,var(--bleu) 0%,#1a6bc5 100%);color:white;padding:2.5rem 0;text-align:center;}
+        .logo-section{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1rem;}
+        .logo-placeholder{width:100px;height:100px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+        .developper-photo{width:150px;height:150px;border-radius:8px;background:linear-gradient(135deg,var(--or) 0%,#b8860b 100%);display:flex;align-items:center;justify-content:center;font-size:3rem;}
+        
+        nav{background:white;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:36px;z-index:99;}
+        nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;padding:1rem;}
+        nav a{text-decoration:none;color:var(--sombre);font-weight:500;padding:0.5rem 0.8rem;border-radius:4px;transition:0.3s;font-size:0.95rem;}
+        nav a:hover,nav a.active{background:var(--bleu);color:white;}
+        
+        .container{max-width:1200px;margin:0 auto;padding:2rem;}
+        h2{color:var(--bleu);margin-bottom:1.5rem;border-bottom:3px solid var(--or);padding-bottom:0.5rem;display:inline-block;}
+        .hero-text{font-size:1.2rem;max-width:800px;margin:0 auto 2rem;text-align:center;}
+        .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:3rem 0;}
+        .card{background:var(--claire);border-radius:8px;padding:1.8rem;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:0.3s;}
+        .card:hover{transform:translateY(-5px);box-shadow:0 6px 20px rgba(0,0,0,0.08);}
+        .card h3{color:var(--bleu);margin-bottom:1rem;}
+        .icon{font-size:2rem;margin-bottom:1rem;}
+        .parole-section{background:var(--claire);padding:2.5rem;border-radius:8px;margin:3rem 0;}
+        .btn{display:inline-block;background:var(--or);color:white;padding:0.8rem 2rem;border-radius:4px;text-decoration:none;font-weight:bold;margin-top:1rem;transition:0.3s;}
+        .btn:hover{background:#b8860b;}
+        footer{background:var(--sombre);color:white;text-align:center;padding:2rem;margin-top:3rem;}
+    </style>
 </head>
 <body>
-
-  <header>
-    <div class="container">
-      <div class="entete-contenu">
-        <div class="bloc-logo">
-          <img src="logo.png" alt="Fondation PSMK" class="logo-entete">
-        </div>
-        <div class="bloc-texte">
-          <h1>Fondation Paluku Siwako Makuké Kapako</h1>
-          <p class="sous-titre-entete">Au service du peuple de Lubero</p>
-          <p class="slogan">« La voix de la population à l'Assemblée nationale »</p>
-        </div>
-        <div class="bloc-photo">
-          <img src="depute.png" alt="L'Honorable Paluku Siwako Makuké Kapako" class="photo-entete">
-        </div>
-      </div>
+    <!-- Barre d'alertes défilante -->
+    <div class="alerte-bar">
+        <span class="alerte-label"><span class="led-indicator"></span> ALERTES</span>
+        <span class="alerte-text">Bienvenue sur le site de la Fondation Kapako Makuke — FOKAMA • Paix • Développement • Solidarité • Lubero, Nord-Kivu, RDC</span>
     </div>
-  </header>
 
-  <nav>
-    <div class="container">
-      <a href="index.html" class="actif">Accueil</a>
-      <a href="politique.html">Vie Politique</a>
-      <a href="donation.html">Faire un don</a>
-      <a href="contact.html">Contact</a>
-      <a href="#" id="lien-admin" class="btn-or" style="padding:6px 12px; border-radius:4px; font-size:0.85rem;">Admin</a>
-    </div>
-  </nav>
-
-  <section id="espace-admin" class="section" style="display:none; background:#f0f4f0;">
-    <div class="container">
-      <h2 class="titre-centre">🔐 Espace Administrateur</h2>
-      
-      <div id="connexion-admin" style="max-width: 450px; margin:0 auto 40px;">
-        <h3 style="text-align:center; color:var(--vert-fonce); margin-bottom:20px;">Connexion Admin</h3>
-        <form id="form-admin" class="formulaire">
-          <label for="admin-email">Email administrateur</label>
-          <input type="email" id="admin-email" required>
-          <label for="admin-mdp">Mot de passe</label>
-          <input type="password" id="admin-mdp" required>
-          <button type="submit" class="btn btn-plein">Se connecter</button>
-          <p id="msg-admin" class="message"></p>
-        </form>
-      </div>
-
-      <div id="panneau-admin" style="display:none;">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:25px;">
-          <h3 style="color:var(--vert-fonce);">📊 Tableau de bord</h3>
-          <button id="deconnexion-admin" class="btn" style="background:var(--rouge); padding:6px 14px; font-size:0.9rem;">Déconnexion</button>
+    <header>
+        <div class="logo-section">
+            <div class="logo-placeholder">🏛️</div>
+            <div>
+                <h1>FONDATION KAPAKO MAKUKE</h1>
+                <p style="font-size:1.2rem;opacity:0.95;">FOKAMA — Paix • Développement • Solidarité</p>
+            </div>
+            <div class="developper-photo">👤</div>
         </div>
+        <p style="max-width:800px;margin:0 auto;">Au service du développement durable du territoire de Lubero et de toute la République Démocratique du Congo</p>
+    </header>
 
-        <div style="background:white; padding:25px; border-radius:8px; margin-bottom:30px;">
-          <h4 style="color:var(--vert-fonce); margin-bottom:15px;">📢 Publier une information à la une</h4>
-          <form id="form-info-une">
-            <label>Titre</label>
-            <input type="text" id="info-titre" required>
-            <label>Contenu</label>
-            <textarea id="info-contenu" rows="3" required></textarea>
-            <button type="submit" class="btn">Publier à la une</button>
-          </form>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="nos-projets.html">Nos Projets</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="equipe.html">Équipe</a></li>
+            <li><a href="vie-politique.html">Vie Politique</a></li>
+            <li><a href="faire-un-don.html">Faire un don</a></li>
+            <li><a href="transparence.html">Transparence</a></li>
+            <li><a href="partenaires.html">Partenaires</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2 style="text-align:center;display:block;">Bienvenue à la Fondation FOKAMA</h2>
+        <p class="hero-text">Créée par l'Honorable Paluku Siwako Makuké Kapako, la Fondation FOKAMA œuvre pour la paix, l'éducation, la santé, l'environnement et l'entreprenariat au service des communautés du Nord-Kivu et de toute la RDC.</p>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="icon">🤝</div>
+                <h3>Notre Mission</h3>
+                <p>Améliorer les conditions de vie des populations vulnérables à travers des actions solidaires et durables dans le territoire de Lubero et au-delà.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🕊️</div>
+                <h3>Notre Vision</h3>
+                <p>Un Lubero uni, en paix et prospère, où chaque personne a accès à l'éducation, à la santé et à des opportunités de développement.</p>
+            </div>
+            <div class="card">
+                <div class="icon">💪</div>
+                <h3>Nos Valeurs</h3>
+                <p>Solidarité • Intégrité • Équité • Justice • Dialogue • Transparence — au cœur de chacune de nos actions.</p>
+            </div>
         </div>
 
-        <div style="background:white; padding:25px; border-radius:8px; margin-bottom:30px;">
-          <h4 style="color:var(--vert-fonce); margin-bottom:15px;">🏗️ Ajouter / Modifier un projet</h4>
-          <form id="form-projet">
-            <label>Nom du projet</label>
-            <input type="text" id="projet-nom" required>
-            <label>Description</label>
-            <textarea id="projet-description" rows="3" required></textarea>
-            <label>Statut</label>
-            <select id="projet-statut">
-              <option value="en-cours">En cours</option>
-              <option value="a-venir">À venir</option>
-              <option value="termine">Terminé</option>
-            </select>
-            <button type="submit" class="btn">Enregistrer le projet</button>
-          </form>
+        <div class="parole-section">
+            <h2>🗣️ Parole des Citoyens</h2>
+            <p>Votre voix compte ! Envoyez-nous vos suggestions et propositions pour le développement de notre communauté. Les messages approuvés seront publiés ici.</p>
+            <a href="contact.html" class="btn">Voir les messages & Envoyer le vôtre</a>
         </div>
 
-        <div style="background:white; padding:25px; border-radius:8px;">
-          <h4 style="color:var(--vert-fonce); margin-bottom:15px;">💬 Suggestions en attente</h4>
-          <div id="liste-sugg-en-attente">
-            <p class="vide">Aucune suggestion en attente.</p>
-          </div>
+        <div style="text-align:center;margin-top:3rem;padding:2rem;background:var(--claire);border-radius:8px;">
+            <h3>🤝 Soutenez notre action</h3>
+            <p>Votre don nous permet de concrétiser nos projets sur le terrain.</p>
+            <a href="faire-un-don.html" class="btn">Faire un don</a>
         </div>
-      </div>
     </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="titre-centre">📢 À la une</h2>
-      <div id="liste-infos-une">
-        <div class="alrte-boite">
-          <h4>Bienvenue sur notre site</h4>
-          <p>Découvrez nos projets, nos actualités et partagez vos suggestions. Ensemble, construisons un avenir meilleur pour Lubero !</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-claire">
-    <div class="container">
-      <h2 class="titre-centre">Nos Réalisations</h2>
-      <div class="grille-chiffres">
-        <div class="carte-chiffre"><div class="chiffre">12</div><div class="etiquette">Activités menées</div></div>
-        <div class="carte-chiffre"><div class="chiffre" id="compteur-projets">04</div><div class="etiquette">Projets en cours</div></div>
-        <div class="carte-chiffre"><div class="chiffre">05</div><div class="etiquette">Rapports publiés</div></div>
-        <div class="carte-chiffre"><div class="chiffre">∞</div><div class="etiquette">Engagement total</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="titre-centre">Présentation de la Fondation</h2>
-      <p class="intro">Notre mission est de contribuer au bien-être de la population de Lubero à travers des actions concrètes, mesurables et durables.</p>
-      <h3 class="sous-titre-centre">Nos Valeurs</h3>
-      <div class="grille-valeurs">
-        <div class="valeur"><div class="valeur-icone">📊</div><h4>Transparence</h4><p>Rendre des comptes clairement</p></div>
-        <div class="valeur"><div class="valeur-icone">🤝</div><h4>Solidarité</h4><p>Agir ensemble pour les plus démunis</p></div>
-        <div class="valeur"><div class="valeur-icone">🗣️</div><h4>Participation</h4><p>Écouter et impliquer la population</p></div>
-        <div class="valeur"><div class="valeur-icone">🎯</div><h4>Impact</h4><p>Des résultats visibles sur le terrain</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-claire">
-    <div class="container">
-      <h2 class="titre-centre">Nos Projets</h2>
-      <div id="liste-projets">
-        <div class="action">
-          <h4>🏕️ Campagne de sensibilisation communautaire</h4>
-          <p>Rencontres dans les villages pour échanger sur les priorités du territoire et renforcer la cohésion sociale.</p>
-          <span class="projet-statut">En cours</span>
-        </div>
-        <div class="action">
-          <h4>📚 Appui à l'éducation et à la formation</h4>
-          <p>Distribution de matériel scolaire, soutien aux écoles et bourses pour les élèves méritants.</p>
-          <span class="projet-statut">En cours</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="titre-centre">💬 Paroles de citoyens</h2>
-      <p class="intro">Voici les suggestions et messages que vous nous avez confiés, sélectionnés et publiés pour le bien commun.</p>
-      <div id="liste-suggestions-accueil">
-        <p class="texte-centre note">Les suggestions approuvées apparaîtront ici.</p>
-      </div>
-      <p class="texte-centre" style="margin-top:20px;">
-        <a href="contact.html" class="btn">Laisser votre suggestion →</a>
-      </p>
-    </div>
-  </section>
-
-  <section class="section bg-claire">
-    <div class="container">
-      <h2 class="titre-centre">Nos Rapports</h2>
-      <table>
-        <thead><tr><th>Période</th><th>Résumé</th><th>Accès</th></tr></thead>
-        <tbody>
-          <tr><td><strong>2026 — T1</strong></td><td>Projets sociaux, soutien sanitaire et suivi des bénéficiaires</td><td><a href="#" class="btn btn-sm">Voir</a></td></tr>
-          <tr><td><strong>2026 — T2</strong></td><td>Éducation, formation et actions communautaires renforcées</td><td><a href="#" class="btn btn-sm">Voir</a></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>© 2026 Fondation Paluku Siwako Makuké Kapako — Tous droits réservés</p>
-      <p>« Au service du peuple de Lubero »</p>
-    </div>
-  </footer>
-
-  <script src="app.js"></script>
+    <footer>
+        <p>&copy; 2026 FOKAMA — Fondation Kapako Makuke. Tous droits réservés.</p>
+        <p>Siège : Lubero, Nord-Kivu — RDC</p>
+    </footer>
 </body>
 </html>
