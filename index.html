@@ -3,116 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - FOKAMA | Fondation Kapako Makuke</title>
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
-        :root{--bleu:#0c4b8c;--or:#d4a017;--claire:#f4f7fa;--sombre:#2d3748;}
-        body{line-height:1.6;color:var(--sombre);background:#fff;}
-        
-        /* Barre d'alertes fixe */
-        .alerte-bar{position:fixed;top:0;left:0;right:0;background:var(--bleu);color:white;padding:0.4rem 1rem;z-index:100;display:flex;align-items:center;gap:1rem;overflow:hidden;}
-        .alerte-label{font-weight:bold;white-space:nowrap;display:flex;align-items:center;gap:0.5rem;flex-shrink:0;}
-        .led-indicator{width:10px;height:10px;border-radius:50%;background:#4ade80;animation:clignotant 1s infinite;}
-        @keyframes clignotant{0%{opacity:1;}50%{opacity:0.3;}100%{opacity:1;}}
-        .alerte-text{white-space:nowrap;animation:defile 20s linear infinite;}
-        @keyframes defile{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
-        
-        header{margin-top:36px;background:linear-gradient(135deg,var(--bleu) 0%,#1a6bc5 100%);color:white;padding:2.5rem 0;text-align:center;}
-        .logo-section{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1rem;}
-        .logo-placeholder{width:100px;height:100px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
-        .developper-photo{width:150px;height:150px;border-radius:8px;background:linear-gradient(135deg,var(--or) 0%,#b8860b 100%);display:flex;align-items:center;justify-content:center;font-size:3rem;}
-        
-        nav{background:white;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:36px;z-index:99;}
-        nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;padding:1rem;}
-        nav a{text-decoration:none;color:var(--sombre);font-weight:500;padding:0.5rem 0.8rem;border-radius:4px;transition:0.3s;font-size:0.95rem;}
-        nav a:hover,nav a.active{background:var(--bleu);color:white;}
-        
-        .container{max-width:1200px;margin:0 auto;padding:2rem;}
-        h2{color:var(--bleu);margin-bottom:1.5rem;border-bottom:3px solid var(--or);padding-bottom:0.5rem;display:inline-block;}
-        .hero-text{font-size:1.2rem;max-width:800px;margin:0 auto 2rem;text-align:center;}
-        .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:3rem 0;}
-        .card{background:var(--claire);border-radius:8px;padding:1.8rem;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:0.3s;}
-        .card:hover{transform:translateY(-5px);box-shadow:0 6px 20px rgba(0,0,0,0.08);}
-        .card h3{color:var(--bleu);margin-bottom:1rem;}
-        .icon{font-size:2rem;margin-bottom:1rem;}
-        .parole-section{background:var(--claire);padding:2.5rem;border-radius:8px;margin:3rem 0;}
-        .btn{display:inline-block;background:var(--or);color:white;padding:0.8rem 2rem;border-radius:4px;text-decoration:none;font-weight:bold;margin-top:1rem;transition:0.3s;}
-        .btn:hover{background:#b8860b;}
-        footer{background:var(--sombre);color:white;text-align:center;padding:2rem;margin-top:3rem;}
-    </style>
+    <title>Accueil — Fondation Paluku</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Barre d'alertes défilante -->
-    <div class="alerte-bar">
-        <span class="alerte-label"><span class="led-indicator"></span> ALERTES</span>
-        <span class="alerte-text">Bienvenue sur le site de la Fondation Kapako Makuke — FOKAMA • Paix • Développement • Solidarité • Lubero, Nord-Kivu, RDC</span>
-    </div>
 
     <header>
-        <div class="logo-section">
-            <div class="logo-placeholder">🏛️</div>
-            <div>
-                <h1>FONDATION KAPAKO MAKUKE</h1>
-                <p style="font-size:1.2rem;opacity:0.95;">FOKAMA — Paix • Développement • Solidarité</p>
-            </div>
-            <div class="developper-photo">👤</div>
-        </div>
-        <p style="max-width:800px;margin:0 auto;">Au service du développement durable du territoire de Lubero et de toute la République Démocratique du Congo</p>
+        <h1>Fondation Paluku</h1>
+        <p>Siwako Makuké Kapako</p>
+        <p class="sous-titre">Au service du peuple de Lubero</p>
     </header>
 
     <nav>
-        <ul>
-            <li><a href="index.html" class="active">Accueil</a></li>
-            <li><a href="a-propos.html">À propos</a></li>
-            <li><a href="nos-projets.html">Nos Projets</a></li>
-            <li><a href="realisations.html">Réalisations</a></li>
-            <li><a href="equipe.html">Équipe</a></li>
-            <li><a href="vie-politique.html">Vie Politique</a></li>
-            <li><a href="faire-un-don.html">Faire un don</a></li>
-            <li><a href="transparence.html">Transparence</a></li>
-            <li><a href="partenaires.html">Partenaires</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <a href="index.html" class="actif">Accueil</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="projets.html">Nos Projets</a>
+        <a href="realisations.html">Réalisations</a>
+        <a href="equipe.html">Notre Équipe</a>
+        <a href="politique.html">Vie Politique</a>
+        <a href="don.html">Faire un Don</a>
+        <a href="transparence.html">Transparence</a>
+        <a href="partenaires.html">Partenaires</a>
+        <a href="contact.html">Contact & Suggestions</a>
+        <a href="admin.html">Admin</a>
     </nav>
 
-    <div class="container">
-        <h2 style="text-align:center;display:block;">Bienvenue à la Fondation FOKAMA</h2>
-        <p class="hero-text">Créée par l'Honorable Paluku Siwako Makuké Kapako, la Fondation FOKAMA œuvre pour la paix, l'éducation, la santé, l'environnement et l'entreprenariat au service des communautés du Nord-Kivu et de toute la RDC.</p>
+    <main>
+        <section>
+            <h2>« La voix de la population à l'Assemblée nationale »</h2>
+            <p>Ensemble, construisons un avenir meilleur pour notre territoire.</p>
+            <p><a href="projets.html" class="bouton">Découvrir nos actions</a> <a href="don.html" class="bouton secondaire">Soutenir la fondation</a></p>
+        </section>
 
-        <div class="cards-grid">
-            <div class="card">
-                <div class="icon">🤝</div>
-                <h3>Notre Mission</h3>
-                <p>Améliorer les conditions de vie des populations vulnérables à travers des actions solidaires et durables dans le territoire de Lubero et au-delà.</p>
-            </div>
-            <div class="card">
-                <div class="icon">🕊️</div>
-                <h3>Notre Vision</h3>
-                <p>Un Lubero uni, en paix et prospère, où chaque personne a accès à l'éducation, à la santé et à des opportunités de développement.</p>
-            </div>
-            <div class="card">
-                <div class="icon">💪</div>
-                <h3>Nos Valeurs</h3>
-                <p>Solidarité • Intégrité • Équité • Justice • Dialogue • Transparence — au cœur de chacune de nos actions.</p>
-            </div>
-        </div>
+        <section>
+            <h2>Présentation</h2>
+            
+            <h3>Notre Mission</h3>
+            <p>La Fondation Paluku Siwako Makuké Kapako a pour mission de contribuer au bien-être de la population du territoire de Lubero à travers des actions concrètes, mesurables et durables dans les domaines de l'éducation, la santé, le développement communautaire et la bonne gouvernance.</p>
+            <p>Nous croyons en une approche participative où chaque citoyen a sa place et peut contribuer au développement de sa communauté.</p>
 
-        <div class="parole-section">
-            <h2>🗣️ Parole des Citoyens</h2>
-            <p>Votre voix compte ! Envoyez-nous vos suggestions et propositions pour le développement de notre communauté. Les messages approuvés seront publiés ici.</p>
-            <a href="contact.html" class="btn">Voir les messages & Envoyer le vôtre</a>
-        </div>
+            <h3>Nos Valeurs</h3>
+            <ul>
+                <li><strong>📊 Transparence</strong> — Rendre des comptes clairement à la population</li>
+                <li><strong>🤝 Solidarité</strong> — Agir ensemble pour les plus démunis</li>
+                <li><strong>🗣️ Participation</strong> — Écouter et impliquer la population</li>
+                <li><strong>🎯 Impact</strong> — Des résultats visibles sur le terrain</li>
+            </ul>
+        </section>
 
-        <div style="text-align:center;margin-top:3rem;padding:2rem;background:var(--claire);border-radius:8px;">
-            <h3>🤝 Soutenez notre action</h3>
-            <p>Votre don nous permet de concrétiser nos projets sur le terrain.</p>
-            <a href="faire-un-don.html" class="btn">Faire un don</a>
-        </div>
-    </div>
+        <section>
+            <h2>Nos Réalisations en Chiffres</h2>
+            <div class="chiffres">
+                <div class="chiffre">
+                    <div class="nombre">12</div>
+                    <div>Activités menées</div>
+                </div>
+                <div class="chiffre">
+                    <div class="nombre">04</div>
+                    <div>Projets en cours</div>
+                </div>
+                <div class="chiffre">
+                    <div class="nombre">05</div>
+                    <div>Rapports publiés</div>
+                </div>
+                <div class="chiffre">
+                    <div class="nombre">∞</div>
+                    <div>Engagement total</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>À la Une</h2>
+            
+            <h3>📢 Bienvenue sur notre site</h3>
+            <p>Découvrez nos projets, nos actualités et partagez vos suggestions. Ensemble, construisons un avenir meilleur pour Lubero !</p>
+
+            <h3>💬 Paroles de Citoyens</h3>
+            <p>Vos suggestions et messages sont importants. <a href="contact.html">Envoyez-nous vos propositions via notre page Contact</a> — elles seront étudiées et publiées si elles sont approuvées.</p>
+            
+            <div id="messages-approuves">
+                <p style="text-align:center;color:#666;">Chargement des messages...</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 FOKAMA — Fondation Kapako Makuke. Tous droits réservés.</p>
-        <p>Siège : Lubero, Nord-Kivu — RDC</p>
+        <p>&copy; 2026 Fondation Paluku Siwako Makuké Kapako — Tous droits réservés</p>
+        <p>Siège : Lubero, Nord-Kivu — République Démocratique du Congo</p>
     </footer>
+
+    <script>
+        // Charger les messages approuvés depuis Google Sheets
+        const SHEETDB_URL = "https://sheetdb.io/api/v1/r8w4zccs5agk4";
+        
+        async function chargerMessages() {
+            try {
+                const res = await fetch(SHEETDB_URL);
+                const data = await res.json();
+                const approuves = data.filter(m => m.statut && m.statut.toLowerCase() === "approuvée");
+                const conteneur = document.getElementById("messages-approuves");
+                
+                if (approuves.length === 0) {
+                    conteneur.innerHTML = "<p style='text-align:center;color:#666;'>Aucun message approuvé pour le moment.</p>";
+                    return;
+                }
+                
+                conteneur.innerHTML = approuves.map(m => `
+                    <div style="border-left:3px solid #d4a017;padding:1rem;margin:1rem 0;background:#f9f9f9;">
+                        <strong>${m.nom || 'Anonyme'}</strong> — <small>${m.date || ''}</small>
+                        <p style="margin:0.5rem 0 0 0;">${m.message || ''}</p>
+                    </div>
+                `).join("");
+            } catch(e) {
+                document.getElementById("messages-approuves").innerHTML = "<p style='color:red;'>Impossible de charger les messages.</p>";
+            }
+        }
+        
+        chargerMessages();
+    </script>
 </body>
 </html>
