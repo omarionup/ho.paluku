@@ -8,29 +8,46 @@
         *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
         :root{--bleu:#0c4b8c;--or:#d4a017;--claire:#f4f7fa;--sombre:#2d3748;}
         body{line-height:1.6;color:var(--sombre);background:#fff;}
-        header{background:linear-gradient(135deg,var(--bleu) 0%,#1a6bc5 100%);color:white;padding:2rem 0;text-align:center;}
-        nav{background:white;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:0;z-index:99;}
-        nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;padding:1rem;}
-        nav a{text-decoration:none;color:var(--sombre);font-weight:500;padding:0.5rem 1rem;border-radius:4px;transition:0.3s;}
+        
+        .alerte-bar{position:fixed;top:0;left:0;right:0;background:var(--bleu);color:white;padding:0.4rem 1rem;z-index:100;display:flex;align-items:center;gap:1rem;overflow:hidden;}
+        .alerte-label{font-weight:bold;white-space:nowrap;display:flex;align-items:center;gap:0.5rem;flex-shrink:0;}
+        .led-indicator{width:10px;height:10px;border-radius:50%;background:#4ade80;animation:clignotant 1s infinite;display:inline-block;}
+        @keyframes clignotant{0%{opacity:1;}50%{opacity:0.3;}100%{opacity:1;}}
+        .alerte-text{white-space:nowrap;animation:defile 20s linear infinite;}
+        @keyframes defile{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
+        
+        header{margin-top:36px;background:linear-gradient(135deg,var(--bleu) 0%,#1a6bc5 100%);color:white;padding:2rem 0;text-align:center;}
+        nav{background:white;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:36px;z-index:99;}
+        nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;padding:1rem;}
+        nav a{text-decoration:none;color:var(--sombre);font-weight:500;padding:0.5rem 0.8rem;border-radius:4px;transition:0.3s;font-size:0.95rem;}
         nav a:hover,nav a.active{background:var(--bleu);color:white;}
+        
         .container{max-width:1200px;margin:0 auto;padding:2rem;}
-        h2{color:var(--bleu);margin-bottom:2rem;border-bottom:3px solid var(--or);padding-bottom:0.5rem;display:inline-block;}
-        .intro{font-size:1.1rem;max-width:800px;margin-bottom:3rem;}
-        .fondateur-card{display:grid;grid-template-columns:300px 1fr;gap:3rem;background:var(--claire);border-radius:8px;padding:2rem;margin-bottom:3rem;align-items:center;}
-        .fondateur-photo{width:250px;height:250px;border-radius:50%;background:linear-gradient(135deg,var(--bleu) 0%,var(--or) 100%);display:flex;align-items:center;justify-content:center;color:white;font-size:4rem;margin:0 auto;text-align:center;}
-        .fondateur-info h3{color:var(--bleu);font-size:1.8rem;margin-bottom:0.5rem;}
-        .fondateur-info .titre{color:var(--or);font-weight:bold;margin-bottom:1.5rem;}
-        .conseil-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:2rem;}
+        h2{color:var(--bleu);margin-bottom:1.5rem;border-bottom:3px solid var(--or);padding-bottom:0.5rem;display:inline-block;}
+        .intro{font-size:1.1rem;max-width:800px;margin-bottom:2rem;}
+        
+        .fondateur-card{display:grid;grid-template-columns:280px 1fr;gap:2rem;background:var(--claire);border-radius:8px;padding:2rem;margin-bottom:3rem;align-items:center;}
+        @media(max-width:768px){.fondateur-card{grid-template-columns:1fr;}}
+        .fondateur-photo{width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,var(--bleu) 0%,var(--or) 100%);display:flex;align-items:center;justify-content:center;color:white;font-size:4rem;margin:0 auto;text-align:center;flex-shrink:0;}
+        .fondateur-info h3{color:var(--bleu);font-size:1.5rem;margin-bottom:0.5rem;}
+        .fondateur-info .titre{color:var(--or);font-weight:bold;margin-bottom:1rem;}
+        
+        .conseil-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;}
         .membre-card{background:var(--claire);border-radius:8px;padding:1.5rem;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:0.3s;}
         .membre-card:hover{transform:translateY(-5px);box-shadow:0 6px 20px rgba(0,0,0,0.08);}
-        .membre-photo{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--bleu) 0%,var(--or) 100%);display:flex;align-items:center;justify-content:center;color:white;font-size:2.5rem;margin:0 auto 1rem;}
+        .membre-photo{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--bleu) 0%,var(--or) 100%);display:flex;align-items:center;justify-content:center;color:white;font-size:2.2rem;margin:0 auto 1rem;}
         .membre-nom{font-weight:bold;color:var(--bleu);margin-bottom:0.3rem;}
         .membre-poste{font-size:0.9rem;color:#718096;}
-        .bureau-section{margin:3rem 0;}
+        
         footer{background:var(--sombre);color:white;text-align:center;padding:2rem;margin-top:3rem;}
     </style>
 </head>
 <body>
+    <div class="alerte-bar">
+        <span class="alerte-label"><span class="led-indicator"></span> ALERTES</span>
+        <span class="alerte-text">Découvrez l'équipe de la Fondation FOKAMA — Servir ensemble notre communauté</span>
+    </div>
+
     <header>
         <h1>Notre Équipe</h1>
         <p>Le Conseil d'Administration et l'Équipe de la Fondation</p>
@@ -41,9 +58,9 @@
             <li><a href="index.html">Accueil</a></li>
             <li><a href="a-propos.html">À propos</a></li>
             <li><a href="nos-projets.html">Nos Projets</a></li>
-            <li><a href="realisations.html">Nos Réalisations</a></li>
-            <li><a href="equipe.html" class="active">Notre Équipe</a></li>
-            <li><a href="devenir-membre.html">Devenir Membre</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="equipe.html" class="active">Équipe</a></li>
+            <li><a href="vie-politique.html">Vie Politique</a></li>
             <li><a href="faire-un-don.html">Faire un don</a></li>
             <li><a href="transparence.html">Transparence</a></li>
             <li><a href="partenaires.html">Partenaires</a></li>
@@ -66,39 +83,37 @@
             </div>
         </div>
 
-        <section class="bureau-section">
-            <h2>Le Bureau du Conseil d'Administration</h2>
-            <div class="conseil-grid">
-                <div class="membre-card">
-                    <div class="membre-photo">👤</div>
-                    <div class="membre-nom">Président</div>
-                    <div class="membre-poste">Représentant légal de la Fondation</div>
-                </div>
-                <div class="membre-card">
-                    <div class="membre-photo">👤</div>
-                    <div class="membre-nom">Vice-Président</div>
-                    <div class="membre-poste">Assiste le Président dans ses missions</div>
-                </div>
-                <div class="membre-card">
-                    <div class="membre-photo">👤</div>
-                    <div class="membre-nom">Secrétaire Général</div>
-                    <div class="membre-poste">Gestion administrative et archives</div>
-                </div>
-                <div class="membre-card">
-                    <div class="membre-photo">👤</div>
-                    <div class="membre-nom">Trésorier</div>
-                    <div class="membre-poste">Gestion des ressources et transparence</div>
-                </div>
-                <div class="membre-card">
-                    <div class="membre-photo">👤</div>
-                    <div class="membre-nom">Commissaire aux Comptes</div>
-                    <div class="membre-poste">Contrôle de la gestion financière</div>
-                </div>
+        <h2>Le Bureau du Conseil d'Administration</h2>
+        <div class="conseil-grid">
+            <div class="membre-card">
+                <div class="membre-photo">👤</div>
+                <div class="membre-nom">Président</div>
+                <div class="membre-poste">Représentant légal de la Fondation</div>
             </div>
-        </section>
+            <div class="membre-card">
+                <div class="membre-photo">👤</div>
+                <div class="membre-nom">Vice-Président</div>
+                <div class="membre-poste">Assiste le Président dans ses missions</div>
+            </div>
+            <div class="membre-card">
+                <div class="membre-photo">👤</div>
+                <div class="membre-nom">Secrétaire Général</div>
+                <div class="membre-poste">Gestion administrative et archives</div>
+            </div>
+            <div class="membre-card">
+                <div class="membre-photo">👤</div>
+                <div class="membre-nom">Trésorier</div>
+                <div class="membre-poste">Gestion des ressources et transparence</div>
+            </div>
+            <div class="membre-card">
+                <div class="membre-photo">👤</div>
+                <div class="membre-nom">Commissaire aux Comptes</div>
+                <div class="membre-poste">Contrôle de la gestion financière</div>
+            </div>
+        </div>
 
         <h2>Les Membres du Conseil d'Administration</h2>
-        <p style="margin-bottom:2rem;">Le Conseil d'Administration compte également des membres actifs qui participent aux orientations et décisions de la fondation.</p>
+        <p style="margin-bottom:1.5rem;">Le Conseil d'Administration compte également des membres actifs qui participent aux orientations et décisions de la fondation.</p>
         <div class="conseil-grid">
             <div class="membre-card">
                 <div class="membre-photo">👤</div>
