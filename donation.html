@@ -1,91 +1,108 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faire un don — Fondation PSMK</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faire un Don — Fondation Paluku</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <div class="entete-contenu">
-        <div class="bloc-logo">
-          <img src="logo.png" alt="Fondation PSMK" class="logo-entete">
-        </div>
-        <div class="bloc-texte">
-          <h1>Soutenir nos Projets</h1>
-          <p class="sous-titre-entete">Votre générosité change des vies à Lubero</p>
-          <p class="slogan">Chaque don compte pour notre communauté</p>
-        </div>
-        <div class="bloc-photo">
-          <img src="depute.png" alt="L'Honorable Paluku Siwako Makuké Kapako" class="photo-entete">
-        </div>
-      </div>
-    </div>
-  </header>
+    <header>
+        <h1>Faire un Don</h1>
+        <p>Soutenir nos actions pour le développement du Lubero</p>
+    </header>
 
-  <nav>
-    <div class="container">
-      <a href="index.html">Accueil</a>
-      <a href="politique.html">Vie Politique</a>
-      <a href="donation.html" class="actif">Faire un don</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="projets.html">Nos Projets</a>
+        <a href="realisations.html">Réalisations</a>
+        <a href="equipe.html">Notre Équipe</a>
+        <a href="politique.html">Vie Politique</a>
+        <a href="don.html" class="actif">Faire un Don</a>
+        <a href="transparence.html">Transparence</a>
+        <a href="partenaires.html">Partenaires</a>
+        <a href="contact.html">Contact & Suggestions</a>
+        <a href="admin.html">Admin</a>
+    </nav>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="titre-centre">Faire un Don</h2>
-      <p class="intro">Votre don permet de concrétiser des actions sur le terrain à Lubero. Merci pour votre générosité et votre engagement aux côtés de la fondation.</p>
-      
-      <form id="form-don" class="formulaire">
-        <label for="nom-don">Votre nom complet</label>
-        <input type="text" id="nom-don" required>
-        
-        <label for="email-don">Votre email</label>
-        <input type="email" id="email-don" required>
-        
-        <label for="montant">Montant du don</label>
-        <input type="text" id="montant" required placeholder="Ex: 50 USD ou 10 000 CDF">
-        
-        <label for="mode-paiement">Mode de paiement</label>
-        <select id="mode-paiement">
-          <option value="mobile-money">Mobile Money</option>
-          <option value="banque">Virement bancaire</option>
-          <option value="especes">Espèces (sur place)</option>
-        </select>
-        
-        <label for="reference">Référence de paiement</label>
-        <input type="text" id="reference" placeholder="Numéro de transaction">
-        
-        <label for="message-don">Message (facultatif)</label>
-        <textarea id="message-don" rows="3" placeholder="Merci pour tout ce que vous faites..."></textarea>
-        
-        <button type="submit" class="btn btn-or btn-plein">💳 Faire un don</button>
-        <p id="msg-don" class="message"></p>
-      </form>
+    <main>
+        <section>
+            <h2>Comment soutenir notre action ?</h2>
+            
+            <div style="background:#f9f9f9;border-left:4px solid #d4a017;padding:1.2rem;margin-bottom:2rem;">
+                <h3>📜 Déclaration sur la provenance des ressources</h3>
+                <p>Conformément à nos statuts, la Fondation s'engage à ne pas accepter de financement provenant d'activités illicites. Tous nos dons sont utilisés de manière transparente au service de nos projets sur le terrain.</p>
+            </div>
 
-      <div class="info-dons">
-        <h3>💡 Informations importantes</h3>
-        <ul>
-          <li>Tous les dons sont utilisés exclusivement pour les projets de la fondation à Lubero.</li>
-          <li>Un reçu vous sera envoyé par email après confirmation de votre don.</li>
-          <li>La fondation publie régulièrement un rapport d'utilisation des
-fonds.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+            <h3>Ce que votre don permet de réaliser</h3>
+            <ul>
+                <li><strong>5 $</strong> — Un kit scolaire pour un élève</li>
+                <li><strong>20 $</strong> — Un kit de santé pour une famille</li>
+                <li><strong>50 $</strong> — 100 arbres plantés pour l'environnement</li>
+                <li><strong>100 $</strong> — Une bourse pour une fille pendant un trimestre</li>
+                <li><strong>250 $</strong> — Formation complète d'un jeune entrepreneur</li>
+            </ul>
 
-  <footer>
-    <div class="container">
-      <p>© 2026 Fondation Paluku Siwako Makuké Kapako — Tous droits réservés</p>
-      <p>« Au service du peuple de Lubero »</p>
-    </div>
-  </footer>
+            <h3>Choisissez votre mode de paiement</h3>
+            
+            <label for="mode">Mode de paiement :</label>
+            <select id="mode" onchange="changerMode()" style="padding:0.6rem;margin:0.5rem 0 1rem 0;width:100%;max-width:400px;">
+                <option value="">-- Sélectionnez un mode --</option>
+                <option value="airtel">Airtel Money</option>
+                <option value="mtn">MTN Mobile Money</option>
+                <option value="banque">Virement Bancaire</option>
+                <option value="especes">Au Siège en Espèces</option>
+            </select>
 
-  <script src="app.js"></script>
+            <div id="airtel" style="display:none;background:#f9f9f9;padding:1.2rem;border-radius:4px;margin-bottom:1rem;">
+                <h4>📱 Airtel Money</h4>
+                <p><strong>Numéro :</strong> +243 82 XX XX XX XX</p>
+                <p><strong>Nom du compte :</strong> Fondation Paluku</p>
+                <p style="font-size:0.9rem;color:#666;">Après envoi, gardez la référence du paiement.</p>
+            </div>
+
+            <div id="mtn" style="display:none;background:#f9f9f9;padding:1.2rem;border-radius:4px;margin-bottom:1rem;">
+                <h4>📱 MTN Mobile Money</h4>
+                <p><strong>Numéro :</strong> +243 81 XX XX XX XX</p>
+                <p><strong>Nom du compte :</strong> Fondation Paluku</p>
+                <p style="font-size:0.9rem;color:#666;">Après envoi, gardez la référence du paiement.</p>
+            </div>
+
+            <div id="banque" style="display:none;background:#f9f9f9;padding:1.2rem;border-radius:4px;margin-bottom:1rem;">
+                <h4>🏦 Coordonnées Bancaires</h4>
+                <p><strong>Nom :</strong> Fondation Paluku Siwako Makuké Kapako</p>
+                <p><strong>Banque :</strong> [Indiquez votre banque]</p>
+                <p><strong>Compte :</strong> XXX XXXXXXXXXX XX</p>
+                <p><strong>Référence :</strong> Don — [Votre nom]</p>
+            </div>
+
+            <div id="especes" style="display:none;background:#f9f9f9;padding:1.2rem;border-radius:4px;margin-bottom:1rem;">
+                <h4>🏢 Au Siège</h4>
+                <p><strong>Adresse :</strong> Lubero, Chef-lieu, Nord-Kivu</p>
+                <p><strong>Horaires :</strong> Lundi à Vendredi, 8h00 — 16h00</p>
+                <p style="font-size:0.9rem;color:#666;">Un reçu vous sera systématiquement délivré.</p>
+            </div>
+
+            <div style="background:#edf7ee;border-left:4px solid #27ae60;padding:1.2rem;margin-top:2rem;">
+                <h4>🔒 Transparence garantie</h4>
+                <p>Nos comptes sont contrôlés chaque année. Consultez nos rapports financiers dans la section <a href="transparence.html">Transparence</a>.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Fondation Paluku Siwako Makuké Kapako — Tous droits réservés</p>
+        <p>Siège : Lubero, Nord-Kivu — République Démocratique du Congo</p>
+    </footer>
+
+    <script>
+        function changerMode() {
+            const valeur = document.getElementById("mode").value;
+            document.querySelectorAll("#airtel, #mtn, #banque, #especes").forEach(el => el.style.display = "none");
+            if (valeur) document.getElementById(valeur).style.display = "block";
+        }
+    </script>
 </body>
 </html>
