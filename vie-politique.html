@@ -3,53 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vie Politique - FOKAMA</title>
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
-        :root{--bleu:#0c4b8c;--or:#d4a017;--claire:#f4f7fa;--sombre:#2d3748;}
-        body{line-height:1.6;color:var(--sombre);background:#fff;}
-        
-        .alerte-bar{position:fixed;top:0;left:0;right:0;background:var(--bleu);color:white;padding:0.4rem 1rem;z-index:100;display:flex;align-items:center;gap:1rem;overflow:hidden;}
-        .alerte-label{font-weight:bold;white-space:nowrap;display:flex;align-items:center;gap:0.5rem;flex-shrink:0;}
-        .led-indicator{width:10px;height:10px;border-radius:50%;background:#4ade80;animation:clignotant 1s infinite;display:inline-block;}
-        @keyframes clignotant{0%{opacity:1;}50%{opacity:0.3;}100%{opacity:1;}}
-        .alerte-text{white-space:nowrap;animation:defile 20s linear infinite;}
-        @keyframes defile{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
-        
-        header{margin-top:36px;background:linear-gradient(135deg,var(--bleu) 0%,#1a6bc5 100%);color:white;padding:2rem 0;text-align:center;}
-        nav{background:white;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:36px;z-index:99;}
-        nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;padding:1rem;}
-        nav a{text-decoration:none;color:var(--sombre);font-weight:500;padding:0.5rem 0.8rem;border-radius:4px;transition:0.3s;font-size:0.95rem;}
-        nav a:hover,nav a.active{background:var(--bleu);color:white;}
-        
-        .container{max-width:1200px;margin:0 auto;padding:2rem;}
-        h2{color:var(--bleu);margin-bottom:1.5rem;border-bottom:3px solid var(--or);padding-bottom:0.5rem;display:inline-block;}
-        .intro{font-size:1.1rem;max-width:800px;margin-bottom:2rem;}
-        
-        .encadre{background:var(--claire);border-left:4px solid var(--or);padding:1.5rem;border-radius:0 6px 6px 0;margin-bottom:2rem;}
-        .encadre h3{color:var(--bleu);margin-bottom:1rem;}
-        
-        .chronologie{margin:2rem 0;}
-        .etape{display:flex;gap:1.5rem;margin-bottom:2rem;align-items:flex-start;}
-        .etape-num{background:var(--bleu);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0;font-size:1.1rem;}
-        .etape-contenu h4{color:var(--or);margin-bottom:0.5rem;}
-        
-        .valeurs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin:2rem 0;}
-        .valeur-card{background:var(--claire);border-radius:8px;padding:1.5rem;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,0.05);}
-        .valeur-icon{font-size:2rem;margin-bottom:0.8rem;}
-        .valeur-card h4{color:var(--bleu);margin-bottom:0.5rem;}
-        
-        .message-section{background:linear-gradient(135deg,var(--bleu) 0%,#1a6bc5 100%);color:white;padding:2rem;border-radius:8px;margin-top:3rem;}
-        .message-section h3{margin-bottom:1rem;font-size:1.4rem;}
-        
-        footer{background:var(--sombre);color:white;text-align:center;padding:2rem;margin-top:3rem;}
-    </style>
+    <title>Vie Politique — Fondation Paluku</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="alerte-bar">
-        <span class="alerte-label"><span class="led-indicator"></span> ALERTES</span>
-        <span class="alerte-text">Engagement politique et développement du Lubero — Servir avec intégrité et dévouement</span>
-    </div>
 
     <header>
         <h1>Vie & Engagement Politique</h1>
@@ -57,88 +14,7 @@
     </header>
 
     <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="a-propos.html">À propos</a></li>
-            <li><a href="nos-projets.html">Nos Projets</a></li>
-            <li><a href="realisations.html">Réalisations</a></li>
-            <li><a href="equipe.html">Équipe</a></li>
-            <li><a href="vie-politique.html" class="active">Vie Politique</a></li>
-            <li><a href="faire-un-don.html">Faire un don</a></li>
-            <li><a href="transparence.html">Transparence</a></li>
-            <li><a href="partenaires.html">Partenaires</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <p class="intro">L'engagement politique de l'Honorable Paluku Siwako Makuké Kapako s'inscrit dans une vision claire : servir le peuple du Territoire de Lubero et contribuer à l'émergence d'une RDC unie, pacifiée et prospère.</p>
-
-        <div class="encadre">
-            <h3>🎯 Vision Politique</h3>
-            <p>« Mon ambition est simple : donner au Lubero les moyens de son développement. Un territoire où la paix est assurée, où chaque enfant a accès à l'éducation, où
-l'économie locale est dynamique et où la dignité de chaque personne est respectée. Je crois en un développement qui part des communautés de base, porté par leurs propres forces et leurs propres initiatives. »</p>
-        </div>
-
-        <h2>📋 Parcours & Mandat</h2>
-        <div class="chronologie">
-            <div class="etape">
-                <div class="etape-num">1</div>
-                <div class="etape-contenu">
-                    <h4>Engagement communautaire</h4>
-                    <p>Longtemps actif au sein de sa communauté, l'Honorable Paluku Siwako Makuké Kapako s'est toujours investi pour la résolution pacifique des conflits locaux et la promotion du développement économique au Lubero.</p>
-                </div>
-            </div>
-            <div class="etape">
-                <div class="etape-num">2</div>
-                <div class="etape-contenu">
-                    <h4>Élection comme Député National</h4>
-                    <p>Élu Député National représentant le Territoire de Lubero, il porte au Parlement les préoccupations légitimes de sa circonscription et défend les intérêts de sa population au niveau national.</p>
-                </div>
-            </div>
-            <div class="etape">
-                <div class="etape-num">3</div>
-                <div class="etape-contenu">
-                    <h4>Création de la Fondation FOKAMA</h4>
-                    <p>Convaincu que l'action politique doit s'accompagner d'actions concrètes sur le terrain, il crée la Fondation Kapako Makuke pour prolonger son engagement au-delà du mandat politique, au service de tous et sans distinction politique.</p>
-                </div>
-            </div>
-        </div>
-
-        <h2>💡 Nos Priorités Législatives</h2>
-        <div class="valeurs-grid">
-            <div class="valeur-card">
-                <div class="valeur-icon">🕊️</div>
-                <h4>Paix & Sécurité</h4>
-                <p>Œuvrer pour la stabilité du territoire et la protection des populations contre les groupes armés, condition essentielle de tout développement durable.</p>
-            </div>
-            <div class="valeur-card">
-                <div class="valeur-icon">🛣️</div>
-                <h4>Infrastructures</h4>
-                <p>Améliorer les routes, les centres de santé, les écoles et l'accès à l'eau potable pour rapprocher les communautés et stimuler l'économie locale.</p>
-            </div>
-            <div class="valeur-card">
-                <div class="valeur-icon">🌾</div>
-                <h4>Développement Économique</h4>
-                <p>Soutenir l'agriculture, l'entreprenariat local et la transformation des ressources sur place pour créer des emplois et retenir les jeunes chez eux.</p>
-            </div>
-            <div class="valeur-card">
-                <div class="valeur-icon">⚖️</div>
-                <h4>Justice & Équité</h4>
-                <p>Veiller à ce que les lois servent réellement le peuple et que les ressources du pays bénéficient à toutes les communautés, sans exclusion.</p>
-            </div>
-        </div>
-
-        <div class="message-section">
-            <h3>📢 Message aux Citoyens du Lubero</h3>
-            <p style="font-size:1.1rem;line-height:1.8;">« Chers compatriotes, le développement du Lubero est d'abord notre affaire. Mon engagement à l'Assemblée Nationale et à travers la Fondation FOKAMA découle d'une seule et même conviction : nous pouvons nous-mêmes bâtir le changement que nous voulons voir. Soutenons-nous, collaborons, restons unis dans la diversité. C'est ensemble que nous ferons du Lubero un territoire pacifique, prospère et digne de ses enfants. »</p>
-            <p style="margin-top:1.5rem;font-weight:bold;">— Honorable Paluku Siwako Makuké Kapako<br>Député National, Territoire de Lubero</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 FOKAMA — Fondation Kapako Makuke. Tous droits réservés.</p>
-        <p>Siège : Lubero, Nord-Kivu — RDC</p>
-    </footer>
-</body>
-</html>
+        <a href="index.html">Accueil</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="projets.html">Nos Projets</a>
+        <a href="realisations.html">Réalis
